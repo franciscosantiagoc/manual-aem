@@ -194,6 +194,31 @@ export const Alert = ({ type, title, children }) => {
   );
 };
 
+// Tabla comparativa. Las celdas aceptan el mismo formato inline que Paragraph.
+export const DataTable = ({ headers = [], rows = [], caption }) => (
+  <div className="data-table-wrapper">
+    <table className="data-table">
+      {caption && <caption>{caption}</caption>}
+      <thead>
+        <tr>
+          {headers.map((h, idx) => <th key={idx} scope="col">{h}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, rIdx) => (
+          <tr key={rIdx}>
+            {row.map((cell, cIdx) => (
+              cIdx === 0
+                ? <th key={cIdx} scope="row" dangerouslySetInnerHTML={{ __html: formatMarkdownInline(cell) }} />
+                : <td key={cIdx} dangerouslySetInnerHTML={{ __html: formatMarkdownInline(cell) }} />
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
 export const CodeBlock = ({ filename, language, code }) => {
   const [copied, setCopied] = React.useState(false);
   const handleCopy = () => {

@@ -60,23 +60,11 @@ export const allModules = [
       {
         "id": "ch-1",
         "number": "1",
-        "title": "Introducción a los CMS, AEM 6.5 vs. AEMaaCS y Estructura del Proyecto",
+        "title": "Introducción a los CMS y a Adobe Experience Manager: 6.5, 6.5 LTS, Cloud Service y Edge Delivery Services",
         "level": "Básico",
         "track": "back",
-        "summary": "Aprende qué es un gestor de contenido (CMS), sus ventajas y desventajas, la arquitectura de AEM y la estructura de submódulos Maven de forma detallada.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "¿Qué es un Gestor de Contenido (CMS)?",
-          "Ventajas de un CMS Corporativo",
-          "Desventajas de un CMS Corporativo",
-          "Conceptos Arquitectónicos Esenciales de AEM",
-          "Diferencias de Infraestructura: AEM 6.5 vs. AEMaaCS",
-          "Explicación de la Estructura de Módulos de Maven",
-          "Dependencias de Maven",
-          "AEM en el Panorama de CMS: Comparativa con Otras Plataformas",
-          "El Flujo de una Petición: De Author a Publish"
-        ]
+        "summary": "Qué es un CMS y sus tipos, qué es AEM y su familia de productos, y cómo elegir entre AEM 6.5, 6.5 LTS, AEM as a Cloud Service y Edge Delivery Services. Incluye un script para reconocer sitios AEM desde el navegador.",
+        "prerequisites": []
       },
       {
         "id": "ch-2",

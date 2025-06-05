@@ -1217,3 +1217,45 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
   margin-left: 4px;
 }
+
+/* Tablas comparativas */
+.data-table-wrapper {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.data-table caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+.data-table th,
+.data-table td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+.data-table thead th {
+  background: var(--bg-tertiary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.data-table tbody th {
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 140px;
+}
+.data-table td { color: var(--text-secondary); }
+.data-table tbody tr:last-child th,
+.data-table tbody tr:last-child td { border-bottom: none; }
