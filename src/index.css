@@ -1260,3 +1260,77 @@ h1, h2, h3, h4, h5, h6 {
 .data-table td { color: var(--text-secondary); }
 .data-table tbody tr:last-child th,
 .data-table tbody tr:last-child td { border-bottom: none; }
+
+/* Diagramas de flujo */
+.flow-diagram {
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}
+.flow-track {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+.flow-step {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--tone, var(--primary));
+  background: color-mix(in srgb, var(--tone, var(--primary)) 10%, transparent);
+}
+.flow-step.tone-primary { --tone: var(--primary); }
+.flow-step.tone-cyan { --tone: var(--accent-cyan); }
+.flow-step.tone-purple { --tone: var(--accent-purple); }
+.flow-step.tone-success { --tone: var(--color-success); }
+.flow-step.tone-warning { --tone: var(--color-warning); }
+.flow-step-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+.flow-step-detail {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+.flow-connector {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.2rem;
+  min-width: 2rem;
+}
+.flow-arrow {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+.flow-connector-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 5.5rem;
+  line-height: 1.2;
+  margin-top: 0.2rem;
+}
+.flow-diagram figcaption {
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .flow-track { flex-direction: column; }
+  .flow-connector { flex-direction: row; gap: 0.5rem; padding: 0.25rem 0; }
+  .flow-arrow { transform: rotate(90deg); }
+  .flow-connector-label { max-width: none; margin-top: 0; }
+}

@@ -72,16 +72,8 @@ export const allModules = [
         "title": "Arquitectura General de AEM: Author, Publish, Dispatcher, JCR, Sling y OSGi",
         "level": "Básico",
         "track": "back",
-        "summary": "Visión de conjunto de todas las piezas de AEM y cómo viaja una petición desde el navegador hasta el repositorio, antes de entrar al detalle de cada una.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Author vs. Publish vs. Dispatcher: responsabilidades y flujo de publicación",
-          "La pila tecnológica: JCR/Oak, Apache Sling, OSGi (Felix) y HTL",
-          "Recorrido de una petición HTTP de punta a punta",
-          "Topologías: AEM 6.5 on-premise/AMS vs. AEM as a Cloud Service",
-          "Glosario base para el resto de la guía"
-        ]
+        "summary": "El mapa de toda la guía: responsabilidades de Author, Publish, Dispatcher y CDN, capas técnicas (OSGi, Sling, JCR/Oak, HTL), carpetas raíz del repositorio, recorrido de una petición, publicación en 6.5 vs. Cloud y topologías. Incluye diagnóstico con curl y descomposición de URLs de Sling.",
+        "prerequisites": []
       },
       {
         "id": "ch-3",

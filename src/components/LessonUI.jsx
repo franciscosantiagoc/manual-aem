@@ -194,6 +194,34 @@ export const Alert = ({ type, title, children }) => {
   );
 };
 
+// Diagrama de flujo: pasos conectados por flechas con etiqueta opcional.
+// Horizontal en pantallas anchas y vertical en móviles.
+// steps: [{ title, detail, tone }] · tone: 'primary' | 'cyan' | 'purple' | 'success' | 'warning'
+// connectors: etiquetas de las flechas (una menos que los pasos)
+export const FlowDiagram = ({ steps = [], connectors = [], caption }) => (
+  <figure className="flow-diagram">
+    <div className="flow-track">
+      {steps.map((step, idx) => (
+        <React.Fragment key={idx}>
+          <div className={`flow-step tone-${step.tone || 'primary'}`}>
+            <span className="flow-step-title">{step.title}</span>
+            {step.detail && (
+              <span className="flow-step-detail" dangerouslySetInnerHTML={{ __html: formatMarkdownInline(step.detail) }} />
+            )}
+          </div>
+          {idx < steps.length - 1 && (
+            <div className="flow-connector" aria-hidden="true">
+              <span className="flow-arrow">→</span>
+              {connectors[idx] && <span className="flow-connector-label">{connectors[idx]}</span>}
+            </div>
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+    {caption && <figcaption>{caption}</figcaption>}
+  </figure>
+);
+
 // Tabla comparativa. Las celdas aceptan el mismo formato inline que Paragraph.
 export const DataTable = ({ headers = [], rows = [], caption }) => (
   <div className="data-table-wrapper">

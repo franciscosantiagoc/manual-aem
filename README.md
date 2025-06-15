@@ -24,7 +24,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 
 ### Módulo 1: Fundamentos de AEM y Entorno de Trabajo · Básico
 * **Tema 1** [Back · Básico] Introducción a los CMS y a Adobe Experience Manager: 6.5, 6.5 LTS, Cloud Service y Edge Delivery Services
-* **Tema 2** [Back · Básico] Arquitectura General de AEM: Author, Publish, Dispatcher, JCR, Sling y OSGi *(en desarrollo)*
+* **Tema 2** [Back · Básico] Arquitectura General de AEM: Author, Publish, Dispatcher, JCR, Sling y OSGi
 * **Tema 3** [Back · Básico] Preparación del Entorno de Desarrollo: Java, Maven, Git, Node.js e IDE *(en desarrollo)*
 * **Tema 4** [Back · Básico] Instalación Local de AEM 6.5 (Quickstart) y AEM SDK para Cloud Service *(en desarrollo)*
 * **Tema 5** [Front · Básico] Recorrido por las Consolas de AEM y Authoring Básico *(en desarrollo)*
