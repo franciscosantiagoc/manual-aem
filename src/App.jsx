@@ -65,6 +65,11 @@ function App() {
     localStorage.setItem('aem-manual-theme', theme);
   }, [theme]);
 
+  // Al cambiar de tema, evaluación o módulo, volver al inicio de la vista
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [activeChapterId, selectedModuleId]);
+
   // Sincronizar progreso con LocalStorage
   useEffect(() => {
     localStorage.setItem('aem-manual-progress', JSON.stringify(progress));
