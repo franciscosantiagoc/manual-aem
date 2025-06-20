@@ -315,5 +315,175 @@ export default [
       1
     ],
     "explanation": "age indica cuántos segundos lleva la respuesta en una caché compartida. Si crece entre peticiones, respondió la caché y no el origen."
+  },
+  {
+    "id": "ch-3-q1",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "¿Qué versión de Java recomienda Adobe para ejecutar el AEM SDK local de Cloud Service?",
+    "options": [
+      "Java 8",
+      "Java 11",
+      "Java 21"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "El runtime de AEM as a Cloud Service es Java 21 y Adobe recomienda ejecutar el SDK local con Java 21. Java 8 y 11 ya no se soportan en el runtime de Cloud."
+  },
+  {
+    "id": "ch-3-q2",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "¿Cómo se elige la versión de Java con la que Cloud Manager compila un proyecto?",
+    "options": [
+      "Con la variable JAVA_HOME del equipo del desarrollador.",
+      "Con el archivo .cloudmanager/java-version (valores 21 o 17).",
+      "Cambiando la versión dentro de /system/console."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Cloud Manager lee .cloudmanager/java-version en el repositorio. Si no existe, su JAVA_HOME por defecto apunta a un JDK antiguo, así que conviene fijarlo."
+  },
+  {
+    "id": "ch-3-q3",
+    "chapterId": "ch-3",
+    "type": "multiple",
+    "question": "¿Qué versiones de Java soporta AEM 6.5 LTS?",
+    "options": [
+      "Java 8",
+      "Java 17",
+      "Java 21",
+      "Java 11"
+    ],
+    "answer": [
+      1,
+      2
+    ],
+    "explanation": "AEM 6.5 LTS soporta Java 17 y 21 (Oracle e IBM Semeru). Los Service Packs clásicos de 6.5 usan Java 8 u 11."
+  },
+  {
+    "id": "ch-3-q4",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "¿Qué variable de entorno usa Maven para saber qué JDK usar?",
+    "options": [
+      "MAVEN_HOME",
+      "JAVA_HOME",
+      "NODE_PATH"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Maven usa JAVA_HOME. mvn -v muestra la versión y la ruta del Java que tomará; si no coincide con java -version, JAVA_HOME apunta a otro JDK."
+  },
+  {
+    "id": "ch-3-q5",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "Al compilar aparece \"invalid target release: 21\". ¿Cuál es la causa más probable?",
+    "options": [
+      "Maven está desactualizado.",
+      "Se compila con un JDK más antiguo que el que exige el proyecto.",
+      "Falta instalar Node.js."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El proyecto pide compilar para Java 21 pero JAVA_HOME apunta a un JDK anterior. Cambia al JDK correcto."
+  },
+  {
+    "id": "ch-3-q6",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "¿Para qué sirve nvm en un proyecto AEM?",
+    "options": [
+      "Para gestionar varias versiones de Node.js y usar la que pide cada proyecto.",
+      "Para instalar paquetes de contenido en AEM.",
+      "Para cambiar la versión de Java."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "nvm (o nvm-windows) permite instalar varias versiones de Node.js y alternar entre ellas. La versión debe coincidir o acercarse a la del pom.xml del proyecto."
+  },
+  {
+    "id": "ch-3-q7",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "Durante mvn clean install, ¿de dónde toma Node.js el módulo ui.frontend?",
+    "options": [
+      "Siempre del Node.js instalado en el sistema.",
+      "El frontend-maven-plugin descarga su propia copia con la versión fijada en el pom.xml.",
+      "De la instancia de AEM."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El frontend-maven-plugin instala la versión de Node indicada en el pom.xml dentro del proyecto. El Node del sistema se usa al trabajar fuera de Maven, por ejemplo con npm run watch."
+  },
+  {
+    "id": "ch-3-q8",
+    "chapterId": "ch-3",
+    "type": "multiple",
+    "question": "Selecciona las configuraciones de finales de línea recomendadas.",
+    "options": [
+      "core.autocrlf true en Windows",
+      "core.autocrlf input en macOS y Linux",
+      "Un .gitattributes con eol=lf en el proyecto",
+      "Guardar todos los archivos con CRLF para los contenedores Linux"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "El repositorio debe guardar LF. Los contenedores Linux (por ejemplo, el Dispatcher) fallan con scripts CRLF, así que CRLF solo se deja para .bat y .cmd."
+  },
+  {
+    "id": "ch-3-q9",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "En macOS/Linux, ¿qué herramienta permite tener Java 11 y 21 y cambiar entre ellos con un comando?",
+    "options": [
+      "Homebrew Cask",
+      "SDKMAN",
+      "npm"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "SDKMAN gestiona varias versiones de Java y Maven: sdk default fija la global y sdk use cambia solo la terminal actual."
+  },
+  {
+    "id": "ch-3-q10",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "En PowerShell, la función Use-Jdk cambia $env:JAVA_HOME. ¿Cuál es el alcance del cambio?",
+    "options": [
+      "Permanente para todo el sistema.",
+      "Solo la terminal actual.",
+      "Todas las terminales abiertas del usuario."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "$env: modifica variables del proceso actual. Para cambios permanentes se usa [Environment]::SetEnvironmentVariable con el alcance User o Machine."
+  },
+  {
+    "id": "ch-3-q11",
+    "chapterId": "ch-3",
+    "type": "single",
+    "question": "¿Qué ventaja tiene la extensión VSCode AEM Sync frente a aemsync (watcher de npm) para trabajar en local?",
+    "options": [
+      "Compila el código Java más rápido que Maven.",
+      "Controlas cada envío a AEM (manual o al guardar), lo que reduce el riesgo de dejar la instancia local inconsistente.",
+      "Reemplaza por completo el despliegue con Maven."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "aemsync vigila carpetas y envía cambios en ráfagas, lo que en la práctica puede corromper la instancia local. VSCode AEM Sync envía solo lo que eliges (o al guardar, con autopush). Ninguna reemplaza el despliegue completo con Maven."
   }
 ];

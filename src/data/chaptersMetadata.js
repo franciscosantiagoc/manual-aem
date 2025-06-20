@@ -81,17 +81,8 @@ export const allModules = [
         "title": "Preparación del Entorno de Desarrollo: Java, Maven, Git, Node.js e IDE",
         "level": "Básico",
         "track": "back",
-        "summary": "Instala y configura paso a paso todas las herramientas que usa un desarrollador AEM en Windows, macOS y Linux, con versiones compatibles para 6.5 y Cloud.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Matriz de versiones: Java 8/11/17/21, Maven 3.9, Node LTS según versión de AEM",
-          "Instalación de JDK y variables JAVA_HOME / PATH",
-          "Instalación de Maven y settings.xml con el repositorio público de Adobe",
-          "Git, nvm y Node.js",
-          "IntelliJ IDEA / VS Code: plugins recomendados (AEM IDE, HTL, Prettier)",
-          "Verificación final del entorno con comandos de diagnóstico"
-        ]
+        "summary": "Instala y configura paso a paso JDK, Maven, Git, Node.js con nvm y el IDE (IntelliJ IDEA y Visual Studio Code con la extensión VSCode AEM Sync) en Windows, macOS y Linux, con la matriz de versiones para AEM 6.5, 6.5 LTS y Cloud Service, cambio de JDK por proyecto, finales de línea en Git y un script de verificación del entorno.",
+        "prerequisites": []
       },
       {
         "id": "ch-4",
