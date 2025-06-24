@@ -90,18 +90,9 @@ export const allModules = [
         "title": "Instalación Local de AEM 6.5 (Quickstart) y AEM SDK para Cloud Service",
         "level": "Básico",
         "track": "back",
-        "summary": "Levanta instancias Author y Publish en tu máquina a partir del quickstart de 6.5 o del AEM SDK, entendiendo run modes, puertos, memoria y licencia.",
+        "summary": "Instala desde cero instancias Author (4502) y Publish (4503) con el AEM SDK o el Quickstart de 6.5: conceptos de instancia y run modes, primer arranque paso a paso, verificación, anatomía de crx-quickstart, logs, arranque y parada seguros, scripts, debug remoto, Service Packs, actualización del SDK, snapshots y solución de problemas.",
         "prerequisites": [
           "ch-3"
-        ],
-        "status": "pending",
-        "outline": [
-          "Dónde obtener el quickstart 6.5, los Service Packs y el AEM SDK (Software Distribution)",
-          "Estructura de carpetas crx-quickstart y primer arranque",
-          "Run modes (author, publish, local, dev) y cómo asignarlos",
-          "Parámetros JVM, puertos 4502/4503 y modo debug remoto",
-          "Instalación de Service Packs y paquetes base",
-          "Arrancar, detener y reiniciar de forma segura"
         ]
       },
       {
