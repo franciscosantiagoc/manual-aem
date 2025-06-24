@@ -23,7 +23,7 @@ export function formatMarkdownInline(text) {
   if (!text) return '';
   return formatChapterRefs(text)
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/`(.*?)`/g, '<code style="font-size: 0.9em; padding: 2px 5px; color: var(--accent-cyan); font-family: var(--font-mono); background: var(--bg-tertiary); border-radius: 4px;">$1</code>');
+    .replace(/`(.*?)`/g, '<code style="font-size: 0.9em; padding: 2px 5px; color: var(--accent-cyan); font-family: var(--font-mono); background: var(--bg-tertiary); border-radius: 4px; overflow-wrap: anywhere;">$1</code>');
 }
 
 export const LevelBadge = ({ level, compact = false, style }) => (
