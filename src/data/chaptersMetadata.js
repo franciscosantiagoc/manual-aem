@@ -101,17 +101,9 @@ export const allModules = [
         "title": "Recorrido por las Consolas de AEM y Authoring Básico",
         "level": "Básico",
         "track": "front",
-        "summary": "Conoce la interfaz del autor: Sites, Assets, Experience Fragments, Tools, el editor de páginas y el ciclo crear-editar-publicar una página.",
+        "summary": "Entrenamiento como autor para desarrolladores: navegación global y consolas, consola Sites a fondo, sitio de práctica (We.Retail o Standard Site Template), creación de páginas, editor y sus modos, propiedades, versiones y publicación, y cómo se guarda una página en el repositorio.",
         "prerequisites": [
           "ch-4"
-        ],
-        "status": "pending",
-        "outline": [
-          "Navegación global y consolas principales",
-          "Crear un sitio y una página desde una plantilla",
-          "Editor de páginas: modos Edit, Layout, Preview y Timewarp",
-          "Arrastrar componentes, editar diálogos y políticas visibles al autor",
-          "Publicar, despublicar y ver el resultado en Publish"
         ]
       },
       {

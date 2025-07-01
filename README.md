@@ -27,7 +27,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 * **Tema 2** [Back · Básico] Arquitectura General de AEM: Author, Publish, Dispatcher, JCR, Sling y OSGi
 * **Tema 3** [Back · Básico] Preparación del Entorno de Desarrollo: Java, Maven, Git, Node.js e IDE
 * **Tema 4** [Back · Básico] Instalación Local de AEM 6.5 (Quickstart) y AEM SDK para Cloud Service
-* **Tema 5** [Front · Básico] Recorrido por las Consolas de AEM y Authoring Básico *(en desarrollo)*
+* **Tema 5** [Front · Básico] Recorrido por las Consolas de AEM y Authoring Básico
 * **Tema 6** [Back · Básico] Navegación del JCR (CRXDE Lite) y Administración de Paquetes *(en desarrollo)*
 * **Tema 7** [Back · Básico] OSGi Web Console (/system/console): Bundles, Componentes, Configuraciones y Logs *(en desarrollo)*
 
@@ -39,7 +39,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 * **Tema 12** [Back · Básico] Laboratorio: Proyecto AEM as a Cloud Service Estándar desde Cero *(en desarrollo)*
 * **Tema 13** [Front · Básico] Laboratorio: Proyecto AEM con React (6.5 y Cloud) *(en desarrollo)*
 * **Tema 14** [Front · Básico] Laboratorio: Proyecto AEM con Angular (6.5 y Cloud) *(en desarrollo)*
-* **Tema 15** [Back · Básico] Flujo de Despliegue Local: Perfiles Maven, repo tool, aemsync y Git Flow *(en desarrollo)*
+* **Tema 15** [Back · Básico] Flujo de Despliegue Local: Perfiles Maven, Sincronización en Caliente y Git Flow *(en desarrollo)*
 
 ### Módulo 3: Componentes, HTL y Diálogos Básicos · Básico
 * **Tema 16** [Front · Básico] Creación de Componentes AEM: Estructura JCR y Versionado *(en desarrollo)*
@@ -223,11 +223,11 @@ npm run dev
 | Ruta | Contenido |
 |---|---|
 | `src/data/chaptersMetadata.js` | Fuente única del temario: módulos, orden, nivel, track, prerrequisitos y temas pendientes |
-| `src/components/chapters/moduleNN/ChapterNN.jsx` | Contenido de cada tema. `NN` es el número del tema y coincide con su id (`ch-NN`) |
+| `src/components/chapters/moduleNN/ChapterX.jsx` | Contenido de cada tema. `X` es el id estable del tema (`ch-X`), no su número visible |
 | `src/data/quizBank/moduleNN.js` | Banco de preguntas por módulo; cada pregunta referencia su `chapterId` |
 | `src/data/quizBank/index.js` | Agregación del banco por tema, módulo, track y certificación |
 | `src/components/LessonUI.jsx` | Componentes de lección, cabecera del tema y autoevaluación aleatoria |
 
 - Los temas se registran automáticamente (`import.meta.glob`), no hay índice manual.
-- El id de cada tema (`ch-N`), su número visible y el nombre de su archivo coinciden. Si se inserta un tema, se renumera todo el temario.
-- Para referenciar otro tema dentro del texto usa `[[ch-N]]` (se muestra como "Tema N" con enlace) o `[[#ch-N]]` (solo el número).
+- El número visible de un tema se calcula por su posición en el temario; el id `ch-X` nunca cambia para no perder el progreso guardado.
+- Para referenciar otro tema dentro del texto usa `[[ch-X]]` (se muestra como "Tema N" con enlace) o `[[#ch-X]]` (solo el número).

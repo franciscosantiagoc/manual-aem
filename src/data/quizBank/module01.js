@@ -640,5 +640,161 @@ export default [
       3
     ],
     "explanation": "Copiar un repositorio en uso produce una copia corrupta. Con la instancia detenida, copiar y restaurar crx-quickstart es rápido y evita reinstalar."
+  },
+  {
+    "id": "ch-5-q1",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "En la consola Sites, ¿qué ocurre al hacer clic en la miniatura de una página?",
+    "options": [
+      "Se abre el editor de la página.",
+      "Se selecciona la página y aparecen sus acciones en la barra superior.",
+      "Se publica la página."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Clic en el título navega a las páginas hijas; clic en la miniatura (o su casilla) selecciona la página y muestra acciones como Edit, Properties o Quick Publish."
+  },
+  {
+    "id": "ch-5-q2",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "¿Qué diferencia hay entre el Title y el Name de una página?",
+    "options": [
+      "Son el mismo campo con dos nombres.",
+      "El Title es el título visible y el Name es el nombre del nodo y el segmento de la URL.",
+      "El Name es el título para buscadores y el Title la URL."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El Name define la ruta en el repositorio y la URL (por ejemplo sobre-nosotros). Cambiarlo rompe enlaces; el Title se puede cambiar libremente."
+  },
+  {
+    "id": "ch-5-q3",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "Un componente que necesitas no aparece en la pestaña Components del editor. ¿Cuál es la causa más probable?",
+    "options": [
+      "El componente está roto.",
+      "La política de la plantilla no lo permite en ese contenedor.",
+      "Falta publicar la página."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Los componentes disponibles en cada contenedor los define la política de la plantilla, que se configura en el Template Editor."
+  },
+  {
+    "id": "ch-5-q4",
+    "chapterId": "ch-5",
+    "type": "multiple",
+    "question": "Selecciona las formas válidas de editar un componente insertado.",
+    "options": [
+      "Abrir su diálogo con Configure (llave inglesa).",
+      "Edición en línea con Edit (lápiz) en componentes de texto.",
+      "Editar el HTML generado directamente en el modo Preview.",
+      "Aplicar variantes visuales con Styles (pincel), si el Style System está configurado."
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Configure abre el diálogo, Edit permite editar texto en línea y Styles aplica variantes del Style System. En Preview no se edita."
+  },
+  {
+    "id": "ch-5-q5",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "¿Para qué sirve el modo Layout?",
+    "options": [
+      "Para cambiar la plantilla de la página.",
+      "Para definir el ancho de cada componente en columnas y ocultarlo por tipo de dispositivo.",
+      "Para ver versiones anteriores de la página."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Layout controla el diseño responsivo sobre la grilla de columnas; combinado con el Emulator se ajusta cada ancho de pantalla."
+  },
+  {
+    "id": "ch-5-q6",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "¿Qué atajo alterna entre Preview y el modo anterior en el editor?",
+    "options": [
+      "Ctrl+Shift+M",
+      "Ctrl+P",
+      "Ctrl+Shift+E"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Ctrl+Shift+M (Cmd en macOS) alterna entre Preview y el modo en el que estabas."
+  },
+  {
+    "id": "ch-5-q7",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "Publicas con Quick Publish una página que tiene 5 páginas hijas. ¿Qué se publica?",
+    "options": [
+      "La página y sus 5 hijas.",
+      "Solo la página seleccionada (y las referencias que necesite), no sus hijas.",
+      "Nada, porque Quick Publish solo programa la publicación."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Quick Publish publica únicamente lo seleccionado. Para incluir hijas, programar o despublicar se usa Manage Publication."
+  },
+  {
+    "id": "ch-5-q8",
+    "chapterId": "ch-5",
+    "type": "multiple",
+    "question": "¿Qué permite Manage Publication que Quick Publish no permite?",
+    "options": [
+      "Incluir páginas hijas.",
+      "Programar la publicación para una fecha futura.",
+      "Despublicar contenido.",
+      "Editar el contenido de la página."
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Manage Publication es un asistente para publicar o despublicar, programar, incluir hijas, revisar referencias, elegir destino y disparar workflows. No edita contenido."
+  },
+  {
+    "id": "ch-5-q9",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "Publicaste una página pero en Publish da 404, aunque la página se ve publicada en Author. ¿Qué revisas primero?",
+    "options": [
+      "Que su página padre también esté publicada.",
+      "Que la página tenga una miniatura.",
+      "Que el Title no tenga acentos."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "En Publish no puede existir una página hija sin su padre. También hay que revisar referencias (imágenes, fragmentos) y, en 6.5, el agente de replicación."
+  },
+  {
+    "id": "ch-5-q10",
+    "chapterId": "ch-5",
+    "type": "single",
+    "question": "En el JSON de jcr:content de una página, ¿qué indica sling:resourceType de un componente?",
+    "options": [
+      "El usuario que lo creó.",
+      "Qué componente (y por lo tanto qué script) lo renderiza.",
+      "La fecha de publicación."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "sling:resourceType apunta al componente que renderiza ese nodo. El diálogo guarda propiedades en el nodo y el HTL del componente las lee para generar el HTML."
   }
 ];
