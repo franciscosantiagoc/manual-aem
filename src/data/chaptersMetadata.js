@@ -112,20 +112,8 @@ export const allModules = [
         "title": "Navegación del JCR (CRXDE Lite) y Administración de Paquetes",
         "level": "Básico",
         "track": "back",
-        "summary": "Domina el explorador y editor de nodos JCR (CRXDE Lite) y el flujo de exportación e importación de paquetes de contenido con Package Manager.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Navegación del JCR (CRXDE Lite) y Administración de Paquetes",
-          "CRXDE Lite: El Explorador y Editor de Nodos del JCR",
-          "Guía de Ubicación de Recursos Clave del Proyecto",
-          "Otras Carpetas del Sistema de Gran Utilidad",
-          "Cómo se Visualizan los Componentes de una Página en el JCR",
-          "El Style System bajo la lupa en CRXDE Lite",
-          "Cómo editar propiedades en CRXDE Lite",
-          "CRX Package Manager: Migración e Importación de Contenido",
-          "Buenas Prácticas de Desarrollo y Seguridad"
-        ]
+        "summary": "El modelo del JCR (nodos, propiedades y tipos), CRXDE Lite para inspeccionar, crear y consultar el repositorio, y Package Manager para crear, instalar y restaurar paquetes de contenido: estructura del zip, filter.xml, .content.xml, riesgos al instalar y diferencias en Cloud Service.",
+        "prerequisites": []
       },
       {
         "id": "ch-7",

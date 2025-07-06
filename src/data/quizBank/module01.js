@@ -796,5 +796,158 @@ export default [
       1
     ],
     "explanation": "sling:resourceType apunta al componente que renderiza ese nodo. El diálogo guarda propiedades en el nodo y el HTL del componente las lee para generar el HTML."
+  },
+  {
+    "id": "ch-6-q1",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "¿Qué propiedad indica el tipo de un nodo en el JCR?",
+    "options": [
+      "sling:resourceType",
+      "jcr:primaryType",
+      "cq:template"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "jcr:primaryType define el tipo del nodo (cq:Page, nt:unstructured, dam:Asset...). sling:resourceType indica qué componente lo renderiza."
+  },
+  {
+    "id": "ch-6-q2",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "En una página, ¿en qué nodo están el título, la plantilla y los componentes?",
+    "options": [
+      "En el nodo cq:Page de la página.",
+      "En su nodo hijo jcr:content.",
+      "En /conf."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El nodo cq:Page es solo un contenedor; jcr:content (tipo cq:PageContent) guarda las propiedades y, dentro de sus contenedores, los componentes."
+  },
+  {
+    "id": "ch-6-q3",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "Creaste nodos en CRXDE Lite y al recargar desaparecieron. ¿Qué pasó?",
+    "options": [
+      "CRXDE Lite borra los nodos nuevos cada hora.",
+      "No pulsaste Save All, así que los cambios nunca se guardaron.",
+      "Los nodos solo existen en Publish."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "CRXDE Lite acumula los cambios hasta pulsar Save All. Mientras tanto no están en el repositorio."
+  },
+  {
+    "id": "ch-6-q4",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "¿Dónde está disponible CRXDE Lite si trabajas con AEM as a Cloud Service?",
+    "options": [
+      "En todos los entornos de Cloud Service.",
+      "Solo en el SDK local; en la nube se inspecciona con la Developer Console en modo lectura.",
+      "Solo en producción."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Adobe indica que CRXDE Lite solo está disponible en el entorno de desarrollo local. En la nube se usa el navegador de repositorio de la Developer Console."
+  },
+  {
+    "id": "ch-6-q5",
+    "chapterId": "ch-6",
+    "type": "multiple",
+    "question": "¿Qué contiene un paquete de contenido de AEM?",
+    "options": [
+      "META-INF/vault/filter.xml con las rutas que abarca",
+      "Una carpeta jcr_root que reproduce el árbol del repositorio",
+      "Archivos .content.xml con las propiedades de los nodos",
+      "Una copia de la base de datos SQL de AEM"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Un paquete es un zip en formato FileVault: filtros y metadatos en META-INF/vault y el contenido en jcr_root. AEM no usa una base de datos SQL."
+  },
+  {
+    "id": "ch-6-q6",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "Creas un paquete, editas sus filtros y lo descargas, pero pesa 0 bytes. ¿Qué faltó?",
+    "options": [
+      "Hacer Build.",
+      "Hacer Install.",
+      "Publicar el paquete."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Build es lo que copia el contenido de los filtros al zip. Sin Build, el paquete solo tiene su definición."
+  },
+  {
+    "id": "ch-6-q7",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "Instalas un paquete con filtro /content/practica creado hace un mes. ¿Qué riesgo corres?",
+    "options": [
+      "Ninguno: los paquetes solo agregan contenido.",
+      "Perder el contenido creado en esa ruta desde entonces, porque por defecto la rama se reemplaza.",
+      "Que se desinstale AEM."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Por defecto cada filter root se reemplaza por lo que trae el paquete: lo que exista en la instancia y no en el paquete se elimina. Test Install ayuda a comprobarlo antes."
+  },
+  {
+    "id": "ch-6-q8",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "En un .content.xml aparece cantidad=\"{Long}42\". ¿Qué indica {Long}?",
+    "options": [
+      "Que el valor es muy largo.",
+      "El tipo de la propiedad: un número entero.",
+      "Que la propiedad es multivalor."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "FileVault indica el tipo con una pista entre llaves ({Boolean}, {Long}, {Date}...). Los String no llevan pista y los multivalor se escriben entre corchetes."
+  },
+  {
+    "id": "ch-6-q9",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "En AEM as a Cloud Service, ¿qué puede instalarse con Package Manager?",
+    "options": [
+      "Código de /apps y contenido.",
+      "Solo contenido mutable (/content, /conf...); el código llega por Cloud Manager.",
+      "Nada: Package Manager no existe en Cloud."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "En Cloud Service /apps y /libs son inmutables. Package Manager solo instala contenido mutable; el código se despliega con los pipelines de Cloud Manager."
+  },
+  {
+    "id": "ch-6-q10",
+    "chapterId": "ch-6",
+    "type": "single",
+    "question": "Cuando un autor aplica un estilo del Style System, ¿qué se guarda en el nodo del componente?",
+    "options": [
+      "La clase CSS directamente en una propiedad class.",
+      "Un identificador en cq:styleIds, que se traduce a clase CSS con la política de /conf.",
+      "Un archivo CSS nuevo en /apps."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El componente guarda ids en cq:styleIds; la política de la plantilla en /conf relaciona cada id con sus clases CSS. Así el diseño se cambia sin editar cada página."
   }
 ];

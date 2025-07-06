@@ -28,7 +28,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 * **Tema 3** [Back · Básico] Preparación del Entorno de Desarrollo: Java, Maven, Git, Node.js e IDE
 * **Tema 4** [Back · Básico] Instalación Local de AEM 6.5 (Quickstart) y AEM SDK para Cloud Service
 * **Tema 5** [Front · Básico] Recorrido por las Consolas de AEM y Authoring Básico
-* **Tema 6** [Back · Básico] Navegación del JCR (CRXDE Lite) y Administración de Paquetes *(en desarrollo)*
+* **Tema 6** [Back · Básico] Navegación del JCR (CRXDE Lite) y Administración de Paquetes
 * **Tema 7** [Back · Básico] OSGi Web Console (/system/console): Bundles, Componentes, Configuraciones y Logs *(en desarrollo)*
 
 ### Módulo 2: Creación de Proyectos AEM (6.5 y Cloud Service) · Básico

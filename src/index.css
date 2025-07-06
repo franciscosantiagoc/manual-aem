@@ -1334,3 +1334,64 @@ h1, h2, h3, h4, h5, h6 {
   .flow-arrow { transform: rotate(90deg); }
   .flow-connector-label { max-width: none; margin-top: 0; }
 }
+
+/* Esquemas de pantalla */
+.screen-sketch {
+  margin: 1.75rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+.screen-sketch-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.screen-sketch-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-color);
+}
+.screen-sketch-bar strong { margin-left: 0.4rem; font-weight: 600; }
+.screen-sketch-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.9rem;
+}
+.screen-sketch-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.screen-sketch-zone {
+  flex-basis: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 8px;
+  border: 1px dashed var(--tone, var(--primary));
+  background: color-mix(in srgb, var(--tone, var(--primary)) 8%, transparent);
+}
+.screen-sketch-zone.tone-primary { --tone: var(--primary); }
+.screen-sketch-zone.tone-cyan { --tone: var(--accent-cyan); }
+.screen-sketch-zone.tone-purple { --tone: var(--accent-purple); }
+.screen-sketch-zone.tone-success { --tone: var(--color-success); }
+.screen-sketch-zone.tone-warning { --tone: var(--color-warning); }
+.screen-sketch figcaption {
+  padding: 0 0.9rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .screen-sketch-row { flex-direction: column; }
+}

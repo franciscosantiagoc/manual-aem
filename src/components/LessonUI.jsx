@@ -222,6 +222,29 @@ export const FlowDiagram = ({ steps = [], connectors = [], caption }) => (
   </figure>
 );
 
+// Esquema de una pantalla: filas de zonas con su nombre y descripción.
+// rows: [[{ label, detail, grow, tone }]] · grow = ancho relativo dentro de la fila
+export const ScreenSketch = ({ title, rows = [], caption }) => (
+  <figure className="screen-sketch">
+    {title && <div className="screen-sketch-bar"><span /><span /><span /><strong>{title}</strong></div>}
+    <div className="screen-sketch-body">
+      {rows.map((row, rIdx) => (
+        <div key={rIdx} className="screen-sketch-row">
+          {row.map((zone, zIdx) => (
+            <div key={zIdx} className={`screen-sketch-zone tone-${zone.tone || 'primary'}`} style={{ flexGrow: zone.grow || 1 }}>
+              <span className="flow-step-title">{zone.label}</span>
+              {zone.detail && (
+                <span className="flow-step-detail" dangerouslySetInnerHTML={{ __html: formatMarkdownInline(zone.detail) }} />
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+    {caption && <figcaption>{caption}</figcaption>}
+  </figure>
+);
+
 // Tabla comparativa. Las celdas aceptan el mismo formato inline que Paragraph.
 export const DataTable = ({ headers = [], rows = [], caption }) => (
   <div className="data-table-wrapper">
