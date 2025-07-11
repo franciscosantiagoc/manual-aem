@@ -121,15 +121,9 @@ export const allModules = [
         "title": "OSGi Web Console (/system/console): Bundles, Componentes, Configuraciones y Logs",
         "level": "Básico",
         "track": "back",
-        "summary": "Aprende a diagnosticar el estado del backend desde la consola web de Felix: bundles activos, componentes satisfechos, configuraciones y logs.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Bundles: estados (Installed, Resolved, Active) y por qué un bundle no arranca",
-          "Components: referencias insatisfechas y cómo leerlas",
-          "Configuration Manager y Configuration Status",
-          "Sling Log Support: crear loggers por paquete",
-          "Otras vistas útiles: Sling Models, Servlet Resolver, Adapters, Requests"
+        "summary": "OSGi desde cero (bundles, servicios, componentes y configuraciones) y la Web Console para diagnosticarlos: estados de bundles y componentes, Import-Package sin resolver, Configuration Manager y factory configurations, loggers propios, Recent Requests y la Developer Console de Cloud Service.",
+        "prerequisites": [
+          "ch-4"
         ]
       }
     ]

@@ -949,5 +949,158 @@ export default [
       1
     ],
     "explanation": "El componente guarda ids en cq:styleIds; la política de la plantilla en /conf relaciona cada id con sus clases CSS. Así el diseño se cambia sin editar cada página."
+  },
+  {
+    "id": "ch-7-q1",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "¿Qué es un bundle en OSGi?",
+    "options": [
+      "Un paquete de contenido del repositorio.",
+      "Un archivo .jar con metadatos que declaran qué paquetes Java exporta e importa.",
+      "Una página de la Web Console."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Un bundle es un .jar con un MANIFEST.MF que declara Export-Package e Import-Package. El módulo core de un proyecto AEM se compila como bundle."
+  },
+  {
+    "id": "ch-7-q2",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "Tu bundle quedó en estado Installed después de desplegar. ¿Cuál es la causa más probable?",
+    "options": [
+      "Está funcionando correctamente.",
+      "Algún paquete de su Import-Package no lo exporta ningún bundle en una versión compatible.",
+      "Alguien lo detuvo manualmente."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Installed significa que no se resolvieron sus dependencias. En el detalle del bundle, los Imported Packages sin resolver aparecen con \"Cannot be resolved\"."
+  },
+  {
+    "id": "ch-7-q3",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "¿Qué herramienta de la Web Console indica qué bundle exporta un paquete Java?",
+    "options": [
+      "/system/console/depfinder",
+      "/system/console/requests",
+      "/system/console/slinglog"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Depfinder (Dependency Finder) busca qué bundle exporta un paquete y en qué versión."
+  },
+  {
+    "id": "ch-7-q4",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "Un componente aparece como \"unsatisfied (reference)\". ¿Qué significa?",
+    "options": [
+      "Le falta un servicio obligatorio del que depende.",
+      "Falló su código al activarse.",
+      "Está deshabilitado a propósito."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Una referencia insatisfecha indica que ningún servicio disponible cumple una dependencia obligatoria (cardinalidad 1..1). El detalle muestra cuál."
+  },
+  {
+    "id": "ch-7-q5",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "Un componente en estado \"satisfied\" pero no \"active\", ¿es un problema?",
+    "options": [
+      "Sí, siempre indica un error.",
+      "No necesariamente: tiene todo lo necesario y se creará cuando alguien lo use.",
+      "Sí, significa que su bundle está en Installed."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Los componentes DS pueden ser perezosos: se crean al primer uso. Satisfied significa que no les falta nada."
+  },
+  {
+    "id": "ch-7-q6",
+    "chapterId": "ch-7",
+    "type": "multiple",
+    "question": "Sobre los cambios hechos en Configuration Manager, ¿qué afirmaciones son correctas?",
+    "options": [
+      "Se aplican en caliente, sin reiniciar.",
+      "Solo existen en esa instancia: no están en Git ni llegan a otros entornos.",
+      "Son la forma recomendada de configurar producción.",
+      "En AEM as a Cloud Service no se pueden hacer porque no hay Web Console."
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Configuration Manager sirve para probar valores. Las configuraciones definitivas van como archivos .cfg.json en el proyecto; en Cloud Service la Web Console no existe."
+  },
+  {
+    "id": "ch-7-q7",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "¿Cómo se nombra el archivo de una instancia de factory configuration en un proyecto?",
+    "options": [
+      "<PID>.cfg.json",
+      "<PID>~<nombre>.cfg.json",
+      "<nombre>.xml"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El ~ separa el PID de la factory del nombre de la instancia. Nombrarlas tú (por ejemplo ~misitio) permite que cada despliegue actualice siempre la misma instancia."
+  },
+  {
+    "id": "ch-7-q8",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "Creas un logger con Log Level DEBUG, Logger com.misitio y Additive desmarcado. ¿Qué logras?",
+    "options": [
+      "Que todo AEM registre en DEBUG.",
+      "Que los mensajes DEBUG de com.misitio y subpaquetes vayan a su archivo sin duplicarse en error.log.",
+      "Que se borre error.log."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El logger captura solo los paquetes indicados, con el nivel mínimo elegido. Additive desmarcado evita duplicar esos mensajes en error.log."
+  },
+  {
+    "id": "ch-7-q9",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "En Recent Requests, ¿qué te dice la entrada ServletResolution?",
+    "options": [
+      "El tiempo total de la petición.",
+      "Qué script o servlet atendió la petición.",
+      "Qué usuario hizo la petición."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "ServletResolution indica qué script o servlet eligió Sling. ResourceResolution indica en qué recurso se convirtió la URL."
+  },
+  {
+    "id": "ch-7-q10",
+    "chapterId": "ch-7",
+    "type": "single",
+    "question": "En AEM as a Cloud Service, ¿cómo revisas el estado de bundles y configuraciones de un entorno?",
+    "options": [
+      "Con /system/console en ese entorno.",
+      "Con la Developer Console, que se abre desde Cloud Manager y es de solo lectura.",
+      "No es posible revisarlo."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "La Web Console solo existe en el SDK local. La Developer Console ofrece bundles, componentes y configuraciones en solo lectura; los cambios se hacen en el código."
   }
 ];
