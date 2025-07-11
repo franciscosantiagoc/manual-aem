@@ -635,11 +635,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
 }
 .code-filename {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-secondary);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .code-lang-tag {
   font-size: 0.65rem;
@@ -649,6 +652,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 .code-body-wrapper {
   position: relative;
