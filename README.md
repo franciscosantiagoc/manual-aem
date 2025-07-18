@@ -32,7 +32,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 * **Tema 7** [Back · Básico] OSGi Web Console (/system/console): Bundles, Componentes, Configuraciones y Logs
 
 ### Módulo 2: Creación de Proyectos AEM (6.5 y Cloud Service) · Básico
-* **Tema 8** [Back · Básico] Cómo Crear un Proyecto AEM *(en desarrollo)*
+* **Tema 8** [Back · Básico] Cómo Crear un Proyecto AEM con el Maven Archetype
 * **Tema 9** [Back · Básico] Anatomía del Proyecto Maven: core, ui.apps, ui.content, ui.config, ui.frontend, all y dispatcher *(en desarrollo)*
 * **Tema 10** [Back · Básico] FileVault a Fondo: filter.xml, Paquetes de Contenido vs. Código y Modos de Instalación *(en desarrollo)*
 * **Tema 11** [Back · Básico] Laboratorio: Proyecto AEM 6.5 Estándar (HTL) desde Cero *(en desarrollo)*

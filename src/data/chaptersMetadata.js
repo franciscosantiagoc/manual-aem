@@ -137,23 +137,13 @@ export const allModules = [
       {
         "id": "ch-8",
         "number": "8",
-        "title": "Cómo Crear un Proyecto AEM",
+        "title": "Cómo Crear un Proyecto AEM con el Maven Archetype",
         "level": "Básico",
         "track": "back",
-        "summary": "Aprende el uso del Maven Archetype para generar proyectos, la activación/desactivación del módulo ui.frontend, la configuración de SPAs en React o Angular, la elección de Java 8 vs. 11 y cuándo separar el módulo Dispatcher en su propio repositorio.",
+        "summary": "Maven desde cero, qué es el AEM Project Archetype y todas sus propiedades, decisiones clave (Cloud o 6.5, frontend, idioma, ejemplos), generación paso a paso en bash y PowerShell, primera compilación y despliegue en tu AEM local, y el cambio del archetype 58 que eliminó las variantes React y Angular.",
         "prerequisites": [
-          "ch-3"
-        ],
-        "status": "pending",
-        "outline": [
-          "Requisitos Previos para el Desarrollo en AEM",
-          "Java 8 vs. Java 11: Cómo Decidir la Versión del JDK",
-          "Generación del Proyecto con Maven Archetype",
-          "Estructura Física del JCR en Apps",
-          "Activación y Desactivación de ui.frontend",
-          "Creación de Proyectos SPA (React o Angular)",
-          "Separar el Módulo Dispatcher en su Propio Repositorio: Cuándo y Por Qué",
-          "Comandos de Compilación y Despliegue Local (Maven Profiles)"
+          "ch-3",
+          "ch-4"
         ]
       },
       {
@@ -242,6 +232,7 @@ export const allModules = [
         ],
         "status": "pending",
         "outline": [
+          "Por qué se usa el archetype 57: el 58 ya no genera proyectos React (SPA Editor)",
           "Archetype con frontendModule=react: qué cambia",
           "Estructura de ui.frontend: src, components, import-components",
           "Servidor de desarrollo con proxy a AEM",
@@ -262,6 +253,7 @@ export const allModules = [
         ],
         "status": "pending",
         "outline": [
+          "Por qué se usa el archetype 57: el 58 ya no genera proyectos Angular (SPA Editor)",
           "Archetype con frontendModule=angular: qué cambia",
           "Estructura de ui.frontend: módulos, componentes y MapTo",
           "Servidor de desarrollo y proxy",
