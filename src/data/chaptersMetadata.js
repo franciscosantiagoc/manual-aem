@@ -152,17 +152,9 @@ export const allModules = [
         "title": "Anatomía del Proyecto Maven: core, ui.apps, ui.content, ui.config, ui.frontend, all y dispatcher",
         "level": "Básico",
         "track": "back",
-        "summary": "Explica archivo por archivo lo que genera el Archetype: qué va en cada módulo, cómo se empaqueta y cómo se relacionan entre sí.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "El POM padre: propiedades, perfiles y dependencias (uber-jar / aem-sdk-api)",
-          "core: bundle OSGi, bnd y paquetes exportados",
-          "ui.apps y ui.apps.structure: código inmutable en /apps",
-          "ui.content y ui.config: contenido mutable y configuraciones OSGi",
-          "ui.frontend: build de webpack hacia clientlibs",
-          "all: paquete contenedor e incrustación de terceros",
-          "dispatcher y it.tests / ui.tests"
+        "summary": "Recorrido archivo por archivo del proyecto real que genera el archetype 58: POM raíz, core (bnd y versionado de paquetes), ui.apps (proxies y FileVault), ui.apps.structure, ui.config (run modes y repoinit), ui.content (modo merge), ui.frontend (scripts de npm), all (paquete contenedor), dispatcher y pruebas.",
+        "prerequisites": [
+          "ch-8"
         ]
       },
       {
