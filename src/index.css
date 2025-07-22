@@ -1399,3 +1399,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 700px) {
   .screen-sketch-row { flex-direction: column; }
 }
+
+/* Textos largos sin espacios (rutas, atributos) en los exámenes */
+.quiz-card,
+.quiz-container {
+  overflow-wrap: anywhere;
+}
