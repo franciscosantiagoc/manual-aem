@@ -308,5 +308,158 @@ export default [
       1
     ],
     "explanation": "ui.apps.structure declara las raíces (/apps, /apps/<app>, /content/dam/<app>, /oak:index...) y el plugin de FileVault valida los paquetes contra ellas."
+  },
+  {
+    "id": "ch-10-q1",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "En un filter.xml con una sola regla <include pattern=\"/content/sitio/es(/.*)?\"/>, ¿qué se incluye?",
+    "options": [
+      "Todo /content/sitio.",
+      "Solo /content/sitio/es y lo que tiene debajo.",
+      "Todo excepto /content/sitio/es."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "La primera regla fija el valor por defecto: si es include, todo lo que no coincide queda excluido."
+  },
+  {
+    "id": "ch-10-q2",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "Tienes un include de /es(/.*)? seguido de un exclude de /es/borradores(/.*)?. ¿Qué pasa con /es/borradores/nota?",
+    "options": [
+      "Se incluye, porque coincide con el include.",
+      "Se excluye, porque gana la última regla que coincide.",
+      "Da error por reglas contradictorias."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Las rutas se prueban contra todas las reglas y decide la última que coincide, en este caso el exclude."
+  },
+  {
+    "id": "ch-10-q3",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "Una regla <exclude pattern=\"/content/sitio/temporal\"/> no excluye los hijos de temporal. ¿Por qué?",
+    "options": [
+      "Porque exclude no funciona en AEM.",
+      "Porque falta (/.*)? para que la expresión cubra también los descendientes.",
+      "Porque hay que usar matchProperties."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Sin (/.*)? la expresión solo coincide con el nodo exacto. Con /content/sitio/temporal(/.*)? cubre el nodo y todo lo que está debajo."
+  },
+  {
+    "id": "ch-10-q4",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "Instalas en modo replace un paquete que no trae la propiedad \"manual\" que existe en el nodo. ¿Qué pasa con ella?",
+    "options": [
+      "Se conserva.",
+      "Se elimina, porque replace deja la rama idéntica al paquete.",
+      "Se duplica."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "En replace, lo que está dentro de la rama controlada y no viene en el paquete se borra."
+  },
+  {
+    "id": "ch-10-q5",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "¿Qué hace el modo merge_properties con una propiedad que ya existe y también viene en el paquete?",
+    "options": [
+      "La reemplaza con el valor del paquete.",
+      "No la toca: conserva el valor existente.",
+      "La borra."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "merge_properties no toca propiedades existentes, solo agrega nodos y propiedades nuevos, y no borra nada."
+  },
+  {
+    "id": "ch-10-q6",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "¿En qué se diferencia update_properties de merge_properties?",
+    "options": [
+      "update_properties borra lo que no viene en el paquete.",
+      "update_properties reemplaza las propiedades existentes; merge_properties no las toca. Ninguno borra.",
+      "No hay diferencia."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Ambos agregan y ninguno borra; update_properties además actualiza propiedades existentes con los valores del paquete."
+  },
+  {
+    "id": "ch-10-q7",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "¿Por qué están deprecados los modos merge y update?",
+    "options": [
+      "Porque son lentos.",
+      "Porque se comportan distinto según el formato de serialización; sus reemplazos son merge_properties y update_properties.",
+      "Porque Cloud Service no permite instalar paquetes."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El Javadoc de ImportMode los depreca por su comportamiento inconsistente y recomienda sus sucesores."
+  },
+  {
+    "id": "ch-10-q8",
+    "chapterId": "ch-10",
+    "type": "multiple",
+    "question": "Según las reglas de AEM as a Cloud Service, ¿qué es correcto?",
+    "options": [
+      "Un paquete no puede desplegar a la vez en /apps y en áreas mutables.",
+      "ui.apps es de tipo application y ui.content de tipo content.",
+      "Los paquetes de proyecto pueden escribir en /libs.",
+      "Un paquete incrustado en install.author solo se instala en Author."
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Código y contenido van en paquetes separados, /libs es solo de Adobe y las carpetas install.author/install.publish limitan el tier."
+  },
+  {
+    "id": "ch-10-q9",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "Necesitas crear un service user con permiso de lectura sobre el sitio en todos los entornos. ¿Qué usas?",
+    "options": [
+      "Un nodo creado a mano en CRXDE Lite.",
+      "Un script repoinit en ui.config.",
+      "Una página en ui.content."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Repoinit crea usuarios, grupos y ACLs de forma declarativa e idempotente; es la forma recomendada por Adobe."
+  },
+  {
+    "id": "ch-10-q10",
+    "chapterId": "ch-10",
+    "type": "single",
+    "question": "Debes copiar varios GB de assets entre dos instancias AEM 6.5. ¿Qué es lo más adecuado?",
+    "options": [
+      "Un paquete gigante con Package Manager.",
+      "vlt rcp en lotes, desactivando los workflows del DAM en el destino y vigilando los recursos.",
+      "Copiar la carpeta crx-quickstart con la instancia corriendo."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "VLT-RCP copia directamente entre instancias en lotes. Para Cloud Service la herramienta recomendada es Content Transfer Tool."
   }
 ];

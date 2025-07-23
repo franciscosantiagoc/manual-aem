@@ -160,18 +160,13 @@ export const allModules = [
       {
         "id": "ch-10",
         "number": "10",
-        "title": "FileVault a Fondo: filter.xml, Paquetes de Contenido vs. Código y Modos de Instalación",
+        "title": "FileVault a Fondo: filter.xml, Modos de Importación y Tipos de Paquete",
         "level": "Básico",
         "track": "back",
-        "summary": "Domina los filtros de FileVault para no borrar contenido por accidente y entiende la separación mutable/inmutable que exige Cloud Service.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Qué es un paquete de contenido y su META-INF/vault",
-          "filter.xml: root, include/exclude y modos replace/merge/update",
-          "Errores clásicos: sobrescribir contenido de autores",
-          "packageType: application, content, container y mixed",
-          "Repoinit para estructuras y permisos iniciales"
+        "summary": "Qué es FileVault, el formato .content.xml con nodos anidados, reglas include/exclude de filter.xml, los cinco modos de importación probados con un paquete construido a mano, tipos de paquete y reglas de Cloud Service, repoinit frente a ui.content y migración de grandes volúmenes con VLT-RCP.",
+        "prerequisites": [
+          "ch-6",
+          "ch-9"
         ]
       },
       {

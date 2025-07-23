@@ -34,7 +34,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 ### Módulo 2: Creación de Proyectos AEM (6.5 y Cloud Service) · Básico
 * **Tema 8** [Back · Básico] Cómo Crear un Proyecto AEM con el Maven Archetype
 * **Tema 9** [Back · Básico] Anatomía del Proyecto Maven: core, ui.apps, ui.content, ui.config, ui.frontend, all y dispatcher
-* **Tema 10** [Back · Básico] FileVault a Fondo: filter.xml, Paquetes de Contenido vs. Código y Modos de Instalación *(en desarrollo)*
+* **Tema 10** [Back · Básico] FileVault a Fondo: filter.xml, Modos de Importación y Tipos de Paquete
 * **Tema 11** [Back · Básico] Laboratorio: Proyecto AEM 6.5 Estándar (HTL) desde Cero *(en desarrollo)*
 * **Tema 12** [Back · Básico] Laboratorio: Proyecto AEM as a Cloud Service Estándar desde Cero *(en desarrollo)*
 * **Tema 13** [Front · Básico] Laboratorio: Proyecto AEM con React (6.5 y Cloud) *(en desarrollo)*
