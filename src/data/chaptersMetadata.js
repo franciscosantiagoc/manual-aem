@@ -175,17 +175,12 @@ export const allModules = [
         "title": "Laboratorio: Proyecto AEM 6.5 Estándar (HTL) desde Cero",
         "level": "Básico",
         "track": "back",
-        "summary": "Crea, compila, despliega y valida un proyecto AEM 6.5 clásico con HTL, desde el comando del Archetype hasta ver tu primer componente en una página.",
+        "summary": "Laboratorio completo en AEM 6.5: elegir la versión según el Service Pack, generar, compilar y desplegar, qué cambia frente a Cloud (uber-jar y Core Components incrustados) y construir un componente propio con diálogo, HTL, Sling Model, prueba unitaria y estilos, más los ajustes para AEM 6.5 LTS.",
         "prerequisites": [
-          "ch-4"
-        ],
-        "status": "pending",
-        "outline": [
-          "Parámetros del Archetype para 6.5 (aemVersion=6.5.x, frontendModule=general)",
-          "Compilación e instalación con -PautoInstallSinglePackage",
-          "Revisión del sitio de ejemplo y del componente HelloWorld",
-          "Crear un componente propio de principio a fin",
-          "Ejercicio práctico y checklist de verificación"
+          "ch-4",
+          "ch-8",
+          "ch-9",
+          "ch-10"
         ]
       },
       {

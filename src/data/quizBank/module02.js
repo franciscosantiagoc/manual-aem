@@ -461,5 +461,158 @@ export default [
       1
     ],
     "explanation": "VLT-RCP copia directamente entre instancias en lotes. Para Cloud Service la herramienta recomendada es Content Transfer Tool."
+  },
+  {
+    "id": "ch-11-q1",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "¿Dónde averiguas qué valor usar en aemVersion para tu instancia 6.5?",
+    "options": [
+      "En /system/console/productinfo, que muestra la versión con su Service Pack.",
+      "En el archivo license.properties.",
+      "En la página de inicio de AEM."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "productinfo muestra, por ejemplo, 6.5.22.0; para el archetype se usa 6.5.22."
+  },
+  {
+    "id": "ch-11-q2",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "¿Por qué el paquete all de un proyecto 6.5 incluye practica-vendor-packages con Core Components?",
+    "options": [
+      "Porque AEM 6.5 no trae los Core Components de fábrica, a diferencia de Cloud Service.",
+      "Porque es un error del archetype.",
+      "Para reemplazar el uber-jar."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "En 6.5 el archetype incrusta los Core Components (bundle, contenido y configuración) en all. En Cloud ya vienen con el producto."
+  },
+  {
+    "id": "ch-11-q3",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "¿Qué dependencia de API usa AEM 6.5 LTS SP3 según sus release notes?",
+    "options": [
+      "uber-jar 6.5.22 sin clasificador",
+      "uber-jar 6.6.3 con clasificador apis (y deprecated-apis si hace falta)",
+      "aem-sdk-api"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "6.5 LTS separa APIs públicas y deprecadas en el uber-jar 6.6.x con los clasificadores apis y deprecated-apis."
+  },
+  {
+    "id": "ch-11-q4",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "Tu componente nuevo no aparece en la lista del editor. ¿Qué revisas primero?",
+    "options": [
+      "Que su componentGroup coincida con el grupo que permite la política de la plantilla.",
+      "La versión de Java.",
+      "El Dispatcher."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "La política del contenedor permite group:Sitio de Practica - Content; un componente de ese grupo aparece automáticamente."
+  },
+  {
+    "id": "ch-11-q5",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "En el diálogo, un campo tiene name=\"./titulo\". ¿Dónde se guarda su valor?",
+    "options": [
+      "En la propiedad titulo del nodo del componente.",
+      "En la propiedad titulo de la página.",
+      "En /apps."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "./titulo es relativo al nodo del componente. El Sling Model lo lee con un campo llamado titulo anotado con @ValueMapValue."
+  },
+  {
+    "id": "ch-11-q6",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "¿Para qué sirve defaultInjectionStrategy = OPTIONAL en el Sling Model?",
+    "options": [
+      "Para que el modelo se cree aunque falten propiedades, dejando esos campos en null.",
+      "Para que el modelo sea opcional en el HTL.",
+      "Para inyectar servicios OSGi."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Sin OPTIONAL, una propiedad que falta haría fallar la creación del modelo completo."
+  },
+  {
+    "id": "ch-11-q7",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "¿Qué hace data-sly-test.hasContent=\"${!card.empty}\" en el HTL?",
+    "options": [
+      "Muestra el elemento solo si hay contenido y guarda el resultado en la variable hasContent.",
+      "Crea el Sling Model.",
+      "Carga los estilos."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "data-sly-test condiciona el elemento; con .nombre también guarda el resultado para reutilizarlo, aquí en el placeholder."
+  },
+  {
+    "id": "ch-11-q8",
+    "chapterId": "ch-11",
+    "type": "multiple",
+    "question": "Sobre la prueba unitaria con AEM Mocks, ¿qué es correcto?",
+    "options": [
+      "No necesita una instancia de AEM corriendo.",
+      "context.create().resource() crea un nodo falso con propiedades.",
+      "adaptTo() construye el modelo como lo haría AEM.",
+      "Solo funciona en Cloud Service."
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "AEM Mocks simula AEM en memoria; se usa igual para 6.5 y Cloud."
+  },
+  {
+    "id": "ch-11-q9",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "Cambiaste solo el Sling Model (Java). ¿Cuál es la forma más rápida de desplegarlo?",
+    "options": [
+      "mvn clean install -pl core -PautoInstallBundle",
+      "Reinstalar AEM.",
+      "mvn clean install -pl ui.content -PautoInstallPackage"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "-pl core construye solo ese módulo y autoInstallBundle instala el bundle en la consola OSGi."
+  },
+  {
+    "id": "ch-11-q10",
+    "chapterId": "ch-11",
+    "type": "single",
+    "question": "Tu componente se ve en Author pero no en Publish tras publicar la página. ¿Causa probable?",
+    "options": [
+      "El código no se desplegó en Publish.",
+      "El componente no tiene diálogo.",
+      "Falta el archivo SCSS."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "El código debe desplegarse en ambas instancias (por ejemplo con autoInstallSinglePackagePublish); además hay que publicar las referencias como la imagen."
   }
 ];
