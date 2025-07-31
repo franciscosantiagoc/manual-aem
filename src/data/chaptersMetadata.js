@@ -189,17 +189,11 @@ export const allModules = [
         "title": "Laboratorio: Proyecto AEM as a Cloud Service Estándar desde Cero",
         "level": "Básico",
         "track": "back",
-        "summary": "Crea el mismo proyecto para AEM as a Cloud Service con el AEM SDK, y compara línea a línea las diferencias con la variante 6.5.",
+        "summary": "Laboratorio en AEM as a Cloud Service: alinear el proyecto con el SDK, compilar y leer el AEM Analyser (y actualizarlo), desplegar en el SDK, llevar el mismo componente del laboratorio 6.5, provocar y corregir un error de validación, preparar el repositorio para Cloud Manager y probar en un RDE.",
         "prerequisites": [
-          "ch-4"
-        ],
-        "status": "pending",
-        "outline": [
-          "Parámetros del Archetype para Cloud (aemVersion=cloud)",
-          "Despliegue en el AEM SDK local",
-          "Diferencias en POM, ui.config, dispatcher y análisis (aemanalyser)",
-          "Subida a Cloud Manager: repositorio Git y primer pipeline",
-          "Ejercicio práctico y checklist"
+          "ch-4",
+          "ch-10",
+          "ch-11"
         ]
       },
       {

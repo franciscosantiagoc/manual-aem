@@ -614,5 +614,161 @@ export default [
       0
     ],
     "explanation": "El código debe desplegarse en ambas instancias (por ejemplo con autoInstallSinglePackagePublish); además hay que publicar las referencias como la imagen."
+  },
+  {
+    "id": "ch-12-q1",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "¿Contra qué dependencia compila un proyecto de AEM as a Cloud Service?",
+    "options": [
+      "uber-jar",
+      "aem-sdk-api",
+      "core.wcm.components.core"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Los proyectos Cloud compilan contra aem-sdk-api, cuya versión conviene alinear con el SDK local."
+  },
+  {
+    "id": "ch-12-q2",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "¿Qué hace el AEM Analyser durante el build?",
+    "options": [
+      "Minifica el CSS.",
+      "Valida el proyecto con las reglas de Cloud Service: APIs públicas, configuraciones, APIs deprecadas y artefactos.",
+      "Despliega en Cloud Manager."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El analyser aplica en tu equipo las mismas reglas que Cloud Manager, para detectar problemas antes del pipeline."
+  },
+  {
+    "id": "ch-12-q3",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "El build muestra \"Project is configured with outdated aemanalyser plugin version\". ¿Qué haces?",
+    "options": [
+      "Ignorarlo siempre.",
+      "Actualizar la propiedad aemanalyser.version del POM a la versión sugerida.",
+      "Borrar el módulo all."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Con el analyser al día aplicas las reglas más recientes, las mismas que usará Cloud Manager."
+  },
+  {
+    "id": "ch-12-q4",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "¿Por qué en el paquete all del proyecto Cloud no aparecen los Core Components?",
+    "options": [
+      "Porque Cloud Service los incluye en el producto.",
+      "Porque el proyecto no los usa.",
+      "Porque se instalan con npm."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "En 6.5 se incrustan en all; en Cloud Service ya vienen con el producto."
+  },
+  {
+    "id": "ch-12-q5",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "El build falla con \"Package of type APPLICATION is not supposed to contain content outside root nodes libs, oak:index or apps\". ¿Qué ocurre?",
+    "options": [
+      "El paquete ui.apps contiene contenido mutable, como /content, que Cloud prohíbe en paquetes de código.",
+      "Falta Java 21.",
+      "El Dispatcher está mal configurado."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Un paquete application solo puede contener /apps, /libs u /oak:index. El contenido va en ui.content o en repoinit."
+  },
+  {
+    "id": "ch-12-q6",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "¿El Sling Model, HTL y diálogo del laboratorio 6.5 necesitan cambios para funcionar en Cloud?",
+    "options": [
+      "Sí, hay que reescribirlos.",
+      "No, porque usan APIs públicas disponibles en ambos.",
+      "Solo el HTL."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Con APIs públicas el código de componentes es el mismo; cambian la estructura y el despliegue."
+  },
+  {
+    "id": "ch-12-q7",
+    "chapterId": "ch-12",
+    "type": "multiple",
+    "question": "¿Qué tipos de repositorio admite Cloud Manager?",
+    "options": [
+      "Repositorio gestionado por Adobe",
+      "GitHub privado validado con la app de Adobe",
+      "GitLab, Bitbucket o Azure DevOps con token y webhook",
+      "Una carpeta compartida por FTP"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Cloud Manager usa repositorios Git: el de Adobe, GitHub privado o externos validados por token y webhook."
+  },
+  {
+    "id": "ch-12-q8",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "¿Qué define la versión de Java con la que Cloud Manager compila tu proyecto?",
+    "options": [
+      "La variable JAVA_HOME de tu equipo.",
+      "El archivo .cloudmanager/java-version.",
+      "La versión del SDK local."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Cloud Manager lee .cloudmanager/java-version (21 en el proyecto generado). Conviene compilar con la misma versión en local."
+  },
+  {
+    "id": "ch-12-q9",
+    "chapterId": "ch-12",
+    "type": "single",
+    "question": "¿Para qué sirve un RDE?",
+    "options": [
+      "Para desplegar en producción sin pipeline.",
+      "Para probar cambios en un entorno de Cloud en segundos, sin pasar por el pipeline, durante el desarrollo.",
+      "Para ejecutar el Dispatcher en local."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Un RDE es un entorno de desarrollo en la nube con despliegue inmediato vía aio aem:rde:install. No es para producción ni cargas altas."
+  },
+  {
+    "id": "ch-12-q10",
+    "chapterId": "ch-12",
+    "type": "multiple",
+    "question": "Según Adobe, ¿qué límites tiene un RDE?",
+    "options": [
+      "Por defecto uno por programa.",
+      "No incluye tier Preview.",
+      "Paquetes de contenido de hasta 1 GB.",
+      "No permite instalar código."
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Un RDE sí permite instalar código; sus límites son la cantidad, el tamaño de contenido y la ausencia de Preview."
   }
 ];
