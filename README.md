@@ -37,7 +37,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 * **Tema 10** [Back · Básico] FileVault a Fondo: filter.xml, Modos de Importación y Tipos de Paquete
 * **Tema 11** [Back · Básico] Laboratorio: Proyecto AEM 6.5 Estándar (HTL) desde Cero
 * **Tema 12** [Back · Básico] Laboratorio: Proyecto AEM as a Cloud Service Estándar desde Cero
-* **Tema 13** [Front · Básico] Laboratorio: Proyecto AEM con React (6.5 y Cloud) *(en desarrollo)*
+* **Tema 13** [Front · Básico] Laboratorio: Proyecto AEM con React y SPA Editor (Archetype 57)
 * **Tema 14** [Front · Básico] Laboratorio: Proyecto AEM con Angular (6.5 y Cloud) *(en desarrollo)*
 * **Tema 15** [Back · Básico] Flujo de Despliegue Local: Perfiles Maven, Sincronización en Caliente y Git Flow *(en desarrollo)*
 

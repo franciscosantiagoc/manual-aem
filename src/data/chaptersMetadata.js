@@ -199,22 +199,13 @@ export const allModules = [
       {
         "id": "ch-13",
         "number": "13",
-        "title": "Laboratorio: Proyecto AEM con React (6.5 y Cloud)",
+        "title": "Laboratorio: Proyecto AEM con React y SPA Editor (Archetype 57)",
         "level": "Básico",
         "track": "front",
-        "summary": "Genera un proyecto con frontendModule=react para 6.5 y para Cloud, entiende la estructura del ui.frontend en React y ejecuta el servidor de desarrollo.",
+        "summary": "Laboratorio para mantener proyectos React con el SPA Editor (deprecado): cómo funciona el .model.json y MapTo, generar con el archetype 57, recorrer el código, crear un componente con Sling Model Exporter y React con pruebas, desarrollo local con npm start corrigiendo un error del archetype, y cuándo migrar a Universal Editor.",
         "prerequisites": [
-          "ch-8"
-        ],
-        "status": "pending",
-        "outline": [
-          "Por qué se usa el archetype 57: el 58 ya no genera proyectos React (SPA Editor)",
-          "Archetype con frontendModule=react: qué cambia",
-          "Estructura de ui.frontend: src, components, import-components",
-          "Servidor de desarrollo con proxy a AEM",
-          "Diferencias 6.5 vs. Cloud en la variante React",
-          "Estado actual del SPA Editor y alternativas recomendadas",
-          "Ejercicio práctico"
+          "ch-8",
+          "ch-12"
         ]
       },
       {

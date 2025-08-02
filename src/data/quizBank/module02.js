@@ -770,5 +770,158 @@ export default [
       2
     ],
     "explanation": "Un RDE sí permite instalar código; sus límites son la cantidad, el tamaño de contenido y la ausencia de Preview."
+  },
+  {
+    "id": "ch-13-q1",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "¿Desde qué versiones está deprecado el SPA Editor?",
+    "options": [
+      "AEM 6.5.23 y AEM as a Cloud Service 2025.01",
+      "AEM 6.4 y Cloud 2020",
+      "No está deprecado"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Adobe lo deprecó en 6.5.23 y en Cloud 2025.01. Se puede seguir usando, pero solo recibe correcciones P1, P2 y de seguridad."
+  },
+  {
+    "id": "ch-13-q2",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "¿Qué recomienda Adobe para proyectos nuevos que necesitan edición visual con un framework JavaScript?",
+    "options": [
+      "SPA Editor con el archetype 58",
+      "Universal Editor",
+      "Classic UI"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El Universal Editor es el reemplazo recomendado del SPA Editor para implementaciones headless nuevas."
+  },
+  {
+    "id": "ch-13-q3",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "¿Qué versión del archetype es la última que genera proyectos con frontendModule=react?",
+    "options": [
+      "56",
+      "57",
+      "58"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El archetype 58 eliminó las variantes SPA; la 57 es la última que las genera."
+  },
+  {
+    "id": "ch-13-q4",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "¿Qué devuelve AEM al pedir una página con la extensión .model.json?",
+    "options": [
+      "El HTML final de la página.",
+      "El contenido de la página en JSON, con el tipo de cada componente en :type.",
+      "Los archivos de la clientlib."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El .model.json es el modelo que la app React recibe y dibuja con los componentes mapeados."
+  },
+  {
+    "id": "ch-13-q5",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "¿Qué hace MapTo('practicareact/components/text')(Text, TextEditConfig)?",
+    "options": [
+      "Crea un componente en AEM.",
+      "Asocia el tipo de recurso de AEM con el componente React y define su configuración de edición.",
+      "Publica la página."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "MapTo registra qué componente React dibuja cada :type del JSON y lo hace editable con su EditConfig."
+  },
+  {
+    "id": "ch-13-q6",
+    "chapterId": "ch-13",
+    "type": "multiple",
+    "question": "Para que un componente propio aparezca en el .model.json, ¿qué necesita su Sling Model?",
+    "options": [
+      "Implementar ComponentExporter.",
+      "Declarar ComponentExporter en adapters y el resourceType del componente.",
+      "La anotación @Exporter con el exporter de Jackson.",
+      "Un archivo HTL."
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "El exporter necesita ComponentExporter, el resourceType y @Exporter. En un componente SPA no hace falta HTL."
+  },
+  {
+    "id": "ch-13-q7",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "En el EditConfig de un componente React, ¿para qué sirve isEmpty?",
+    "options": [
+      "Para decidir cuándo el componente está vacío y el editor debe mostrar el marcador.",
+      "Para borrar el componente.",
+      "Para validar el diálogo."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Si isEmpty devuelve true, el editor muestra el marcador con el emptyLabel en lugar del componente."
+  },
+  {
+    "id": "ch-13-q8",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "Al ejecutar npm start la app queda en blanco. ¿Qué error del archetype 57 revisas?",
+    "options": [
+      "REACT_APP_PAGE_MODEL_PATH apunta a us/en aunque el sitio se generó con otro país e idioma.",
+      "Falta el archivo App.js.",
+      "El puerto 3000 está prohibido."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "El .env.development generado usa /content/<app>/us/en.model.json; hay que corregirlo a la página real del sitio."
+  },
+  {
+    "id": "ch-13-q9",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "npm start falla con ERR_OSSL_EVP_UNSUPPORTED. ¿Qué haces?",
+    "options": [
+      "Reinstalar AEM.",
+      "Usar Node 16 o definir NODE_OPTIONS=--openssl-legacy-provider.",
+      "Borrar node_modules del proyecto Java."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "react-scripts 4 no es compatible con Node 17 o superior sin ese ajuste."
+  },
+  {
+    "id": "ch-13-q10",
+    "chapterId": "ch-13",
+    "type": "single",
+    "question": "El analyser avisa que spa.project.core usa un paquete con retiro previsto para el 31-mar-2027. ¿Qué implica?",
+    "options": [
+      "Nada, es solo informativo.",
+      "Que un proyecto SPA en Cloud debe actualizar esa dependencia o migrar antes de esa fecha.",
+      "Que hay que cambiar a AEM 6.5."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Las APIs deprecadas con fecha de retiro dejarán de existir; hay que planificar la actualización o migración."
   }
 ];
