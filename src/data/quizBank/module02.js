@@ -923,5 +923,155 @@ export default [
       1
     ],
     "explanation": "Las APIs deprecadas con fecha de retiro dejarán de existir; hay que planificar la actualización o migración."
+  },
+  {
+    "id": "ch-14-q1",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "¿Qué versión de Angular genera el archetype 57 con frontendModule=angular?",
+    "options": [
+      "Angular 9.1",
+      "Angular 17",
+      "AngularJS 1.8"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "El archetype 57 genera Angular 9.1 con TypeScript 3.8, versiones sin soporte desde hace años."
+  },
+  {
+    "id": "ch-14-q2",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "¿Qué herramienta ejecuta las pruebas del frontend Angular en el build?",
+    "options": [
+      "Jest",
+      "Karma con Jasmine en Chrome Headless",
+      "Cypress"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El proyecto Angular usa Karma + Jasmine sobre Chrome Headless descargado con Puppeteer."
+  },
+  {
+    "id": "ch-14-q3",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "Tu componente usa *ngIf y falla con un error de plantilla. ¿Qué falta?",
+    "options": [
+      "Declararlo en un NgModule (por ejemplo AppModule).",
+      "Registrarlo con LazyMapTo.",
+      "Instalar React."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Una plantilla solo puede usar directivas si el componente está declarado en un módulo."
+  },
+  {
+    "id": "ch-14-q4",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "¿Para qué sirve LazyMapTo?",
+    "options": [
+      "Para registrar un componente que se carga bajo demanda con import(), reduciendo el JavaScript inicial.",
+      "Para desactivar un componente.",
+      "Para crear diálogos."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "LazyMapTo recibe una función que importa el componente cuando hace falta."
+  },
+  {
+    "id": "ch-14-q5",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "¿Por qué en Angular 9 el componente de la tarjeta se agrega a entryComponents?",
+    "options": [
+      "Porque el SPA Editor lo crea de forma dinámica.",
+      "Porque es obligatorio para los estilos.",
+      "Porque así se ejecutan las pruebas."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "En Angular 9 los componentes creados dinámicamente deben declararse en entryComponents."
+  },
+  {
+    "id": "ch-14-q6",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "El build de Maven falla antes de compilar Angular. ¿Qué paso del script build puede ser?",
+    "options": [
+      "ng lint, que revisa el estilo con TSLint.",
+      "npm publish.",
+      "mvn deploy."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "El script build ejecuta ng lint antes de ng build: un error de estilo detiene el build."
+  },
+  {
+    "id": "ch-14-q7",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "Con el proyecto tal como lo genera el archetype 57 (Angular), ¿qué build ejecutaría Cloud Manager?",
+    "options": [
+      "El de producción optimizado.",
+      "El de desarrollo (aem-develop) sin optimizar, porque build.environment=:production solo se define en el perfil autoInstallPackagePublish.",
+      "Ninguno."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Cloud Manager no activa autoInstallPackagePublish, así que se construye la versión de desarrollo, mucho más pesada."
+  },
+  {
+    "id": "ch-14-q8",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "¿Cómo activas un perfil de Maven solo dentro de Cloud Manager?",
+    "options": [
+      "Con activeByDefault.",
+      "Con <activation><property><name>env.CM_BUILD</name></property></activation>, porque Cloud Manager define siempre CM_BUILD.",
+      "No es posible."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Adobe documenta que Cloud Manager define CM_BUILD en todos sus builds y muestra este patrón de activación."
+  },
+  {
+    "id": "ch-14-q9",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "En proxy.conf.json, ¿qué hace el campo context?",
+    "options": [
+      "Lista las rutas (imágenes, .model.json, clientlibs) que ng serve reenvía a AEM.",
+      "Define el puerto de Angular.",
+      "Guarda el contenido de la página."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Las peticiones que coinciden con context se reenvían al target (tu Author local) con las credenciales de auth."
+  },
+  {
+    "id": "ch-14-q10",
+    "chapterId": "ch-14",
+    "type": "single",
+    "question": "¿Qué parte del componente es igual en las variantes React y Angular?",
+    "options": [
+      "El diálogo y el Sling Model Exporter, porque el backend solo entrega JSON.",
+      "La plantilla HTML.",
+      "Las pruebas del frontend."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "El backend no depende del framework del frontend; solo cambia la vista y sus pruebas."
   }
 ];

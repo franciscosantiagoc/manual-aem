@@ -211,21 +211,12 @@ export const allModules = [
       {
         "id": "ch-14",
         "number": "14",
-        "title": "Laboratorio: Proyecto AEM con Angular (6.5 y Cloud)",
+        "title": "Laboratorio: Proyecto AEM con Angular y SPA Editor (Archetype 57)",
         "level": "Básico",
         "track": "front",
-        "summary": "Genera un proyecto con frontendModule=angular para 6.5 y para Cloud, con la estructura de módulos Angular y el flujo de build hacia clientlibs.",
+        "summary": "Laboratorio para mantener proyectos Angular con el SPA Editor: diferencias con React, recorrido del código, componente Tarjeta de servicio con MapTo, módulo y pruebas de Karma, corrección del build de producción para Cloud Manager con un perfil env.CM_BUILD, y desarrollo local con ng serve.",
         "prerequisites": [
-          "ch-8"
-        ],
-        "status": "pending",
-        "outline": [
-          "Por qué se usa el archetype 57: el 58 ya no genera proyectos Angular (SPA Editor)",
-          "Archetype con frontendModule=angular: qué cambia",
-          "Estructura de ui.frontend: módulos, componentes y MapTo",
-          "Servidor de desarrollo y proxy",
-          "Diferencias 6.5 vs. Cloud en la variante Angular",
-          "Ejercicio práctico"
+          "ch-13"
         ]
       },
       {
