@@ -225,15 +225,10 @@ export const allModules = [
         "title": "Flujo de Despliegue Local: Perfiles Maven, Sincronización en Caliente y Git Flow",
         "level": "Básico",
         "track": "back",
-        "summary": "Optimiza el ciclo editar-desplegar-probar: qué perfil Maven usar en cada caso, sincronización en caliente de archivos y convención de ramas.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Perfiles autoInstallPackage, autoInstallBundle y autoInstallSinglePackage",
-          "Desplegar solo un módulo para ahorrar tiempo",
-          "Sincronización en caliente con la extensión VSCode AEM Sync (recomendada) y repo tool",
-          "Por qué evitar aemsync (watcher de npm): riesgos de corromper la instancia local",
-          "Git flow y Conventional Commits en proyectos AEM"
+        "summary": "El camino más corto para cada tipo de cambio: perfiles de Maven del proyecto, opciones que acortan el build con tiempos medidos, sincronización en caliente con VSCode AEM Sync y repo (y por qué evitar aemsync), y trabajo con ramas y Conventional Commits.",
+        "prerequisites": [
+          "ch-3",
+          "ch-11"
         ]
       }
     ]

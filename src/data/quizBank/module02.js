@@ -1073,5 +1073,158 @@ export default [
       0
     ],
     "explanation": "El backend no depende del framework del frontend; solo cambia la vista y sus pruebas."
+  },
+  {
+    "id": "ch-15-q1",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "Cambiaste solo un Sling Model en core. ¿Qué comando es el más adecuado?",
+    "options": [
+      "mvn clean install -PautoInstallSinglePackage",
+      "mvn clean install -pl core -PautoInstallBundle",
+      "mvn clean install -pl ui.content -PautoInstallPackage"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "-pl core construye solo el módulo Java y autoInstallBundle instala el bundle en la consola OSGi."
+  },
+  {
+    "id": "ch-15-q2",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "Cambiaste un HTL de ui.apps. ¿Cuál es la forma más rápida de verlo en AEM?",
+    "options": [
+      "Un build completo con todas las pruebas.",
+      "Exportar el archivo con VSCode AEM Sync (o desplegar solo ui.apps).",
+      "Reiniciar AEM."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Los HTL son archivos del repositorio: se pueden sincronizar sin compilar."
+  },
+  {
+    "id": "ch-15-q3",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "Cambiaste SCSS en ui.frontend. ¿Qué debes hacer antes de enviarlo con VSCode AEM Sync?",
+    "options": [
+      "Nada, se envía el SCSS directamente.",
+      "Ejecutar npm run dev para compilar y regenerar la clientlib en ui.apps.",
+      "Ejecutar mvn -pl core."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El SCSS se compila con webpack; npm run dev genera la clientlib que luego se exporta a AEM."
+  },
+  {
+    "id": "ch-15-q4",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "¿Qué hace \"-pl=!it.tests,!ui.tests\"?",
+    "options": [
+      "Construye solo esos módulos.",
+      "Excluye esos módulos del build.",
+      "Borra los módulos."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El ! excluye módulos. Las pruebas de integración y de interfaz no se despliegan y consumen tiempo."
+  },
+  {
+    "id": "ch-15-q5",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "¿Qué riesgo tiene -Dskip.npm -Dskip.installnodenpm?",
+    "options": [
+      "Ninguno.",
+      "ui.apps empaqueta las clientlibs ya generadas, que pueden estar desactualizadas si cambiaste el frontend.",
+      "Borra node_modules."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Saltar npm acelera el build, pero no recompila CSS ni JS."
+  },
+  {
+    "id": "ch-15-q6",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "¿Qué diferencia hay entre autoInstallPackage y autoInstallSinglePackage?",
+    "options": [
+      "Ninguna.",
+      "autoInstallPackage instala el paquete de un módulo; autoInstallSinglePackage instala el paquete all con todo el proyecto.",
+      "autoInstallPackage instala en Publish."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Los perfiles de módulo sirven para cambios puntuales; el de all, para el primer despliegue o cambios en varios módulos."
+  },
+  {
+    "id": "ch-15-q7",
+    "chapterId": "ch-15",
+    "type": "multiple",
+    "question": "Sobre la herramienta repo de Adobe, ¿qué es correcto?",
+    "options": [
+      "repo put sobrescribe por completo el archivo o carpeta en AEM.",
+      "repo status y repo diff muestran diferencias antes de enviar.",
+      "En Windows funciona con Cygwin o WSL.",
+      "Compila el código Java."
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "repo transfiere contenido FileVault como un FTP; no compila Java."
+  },
+  {
+    "id": "ch-15-q8",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "¿Por qué este manual recomienda evitar aemsync?",
+    "options": [
+      "Porque es de pago.",
+      "Porque envía ráfagas de cambios automáticamente y, en la práctica, puede dejar la instancia local inconsistente.",
+      "Porque no funciona con HTL."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Se prefiere VSCode AEM Sync, que permite controlar cada envío."
+  },
+  {
+    "id": "ch-15-q9",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "¿Cuál es un mensaje correcto según Conventional Commits?",
+    "options": [
+      "Cambios varios",
+      "feat: add service card component with dialog and sling model",
+      "FEAT - componente"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El formato es tipo: descripción, con tipos como feat, fix, refactor, test, docs o chore."
+  },
+  {
+    "id": "ch-15-q10",
+    "chapterId": "ch-15",
+    "type": "single",
+    "question": "Antes de abrir un pull request, ¿qué deberías ejecutar?",
+    "options": [
+      "Nada, el pipeline lo revisará.",
+      "Un mvn clean install completo, el mismo build que hará Cloud Manager.",
+      "Solo npm run dev."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Si el build completo falla en tu equipo, también fallará en el pipeline."
   }
 ];

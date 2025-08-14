@@ -39,7 +39,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 * **Tema 12** [Back · Básico] Laboratorio: Proyecto AEM as a Cloud Service Estándar desde Cero
 * **Tema 13** [Front · Básico] Laboratorio: Proyecto AEM con React y SPA Editor (Archetype 57)
 * **Tema 14** [Front · Básico] Laboratorio: Proyecto AEM con Angular y SPA Editor (Archetype 57)
-* **Tema 15** [Back · Básico] Flujo de Despliegue Local: Perfiles Maven, Sincronización en Caliente y Git Flow *(en desarrollo)*
+* **Tema 15** [Back · Básico] Flujo de Despliegue Local: Perfiles Maven, Sincronización en Caliente y Git Flow
 
 ### Módulo 3: Componentes, HTL y Diálogos Básicos · Básico
 * **Tema 16** [Front · Básico] Creación de Componentes AEM: Estructura JCR y Versionado *(en desarrollo)*
