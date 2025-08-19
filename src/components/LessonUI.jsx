@@ -23,7 +23,12 @@ export function formatMarkdownInline(text) {
   if (!text) return '';
   return formatChapterRefs(text)
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/`(.*?)`/g, '<code style="font-size: 0.9em; padding: 2px 5px; color: var(--accent-cyan); font-family: var(--font-mono); background: var(--bg-tertiary); border-radius: 4px; overflow-wrap: anywhere;">$1</code>');
+    .replace(/`(.*?)`/g, (all, code) => `<code style="font-size: 0.9em; padding: 2px 5px; color: var(--accent-cyan); font-family: var(--font-mono); background: var(--bg-tertiary); border-radius: 4px; overflow-wrap: anywhere;">${escapeHtml(code)}</code>`);
+}
+
+// El código inline puede contener etiquetas (`<sly>`, `<head>`): se muestran como texto
+function escapeHtml(text) {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 export const LevelBadge = ({ level, compact = false, style }) => (
