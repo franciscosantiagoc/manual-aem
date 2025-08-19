@@ -21,9 +21,16 @@ function formatChapterRefs(text) {
 // Formato inline: **negritas**, `código` y referencias a otros temas
 export function formatMarkdownInline(text) {
   if (!text) return '';
-  return formatChapterRefs(text)
+  // El código se aparta primero para que sus * y _ no se lean como formato
+  const codes = [];
+  const withoutCode = text.replace(/`(.*?)`/g, (all, code) => {
+    codes.push(code);
+    return `\u0000${codes.length - 1}\u0000`;
+  });
+  return formatChapterRefs(withoutCode)
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/`(.*?)`/g, (all, code) => `<code style="font-size: 0.9em; padding: 2px 5px; color: var(--accent-cyan); font-family: var(--font-mono); background: var(--bg-tertiary); border-radius: 4px; overflow-wrap: anywhere;">${escapeHtml(code)}</code>`);
+    .replace(/(^|[^*\w])\*([^*\s][^*]*?)\*(?![*\w])/g, '$1<em>$2</em>')
+    .replace(/\u0000(\d+)\u0000/g, (all, idx) => `<code style="font-size: 0.9em; padding: 2px 5px; color: var(--accent-cyan); font-family: var(--font-mono); background: var(--bg-tertiary); border-radius: 4px; overflow-wrap: anywhere;">${escapeHtml(codes[idx])}</code>`);
 }
 
 // El código inline puede contener etiquetas (`<sly>`, `<head>`): se muestran como texto
@@ -322,6 +329,56 @@ export const GitFlow = ({ branch, description, files = [], commands = [] }) => (
   </section>
 );
 
+// Imagen o diagrama del tema. Acepta una imagen (src) o un SVG en línea (children),
+// que puede usar las variables CSS del tema para verse bien en claro y oscuro.
+export const Figure = ({ src, alt, caption, credit, children }) => (
+  <figure className="lesson-figure">
+    {src ? <img src={src} alt={alt} loading="lazy" /> : <div className="lesson-figure-svg" role="img" aria-label={alt}>{children}</div>}
+    {(caption || credit) && (
+      <figcaption>
+        {caption && <span dangerouslySetInnerHTML={{ __html: formatMarkdownInline(caption) }} />}
+        {credit && <span className="lesson-figure-credit">{credit}</span>}
+      </figcaption>
+    )}
+  </figure>
+);
+
+// Video embebido (YouTube o Adobe), sin reproducción automática y con carga diferida.
+// provider: 'youtube' | 'adobe' · id: id del video · lang: idioma del audio
+const videoSources = {
+  youtube: (id) => `https://www.youtube-nocookie.com/embed/${id}?autoplay=0&rel=0`,
+  adobe: (id) => `https://video.tv.adobe.com/v/${id}?quality=12&learn=on&autoplay=false`
+};
+const videoPages = {
+  youtube: (id) => `https://www.youtube.com/watch?v=${id}`,
+  adobe: (id) => `https://video.tv.adobe.com/v/${id}`
+};
+
+export const VideoEmbed = ({ provider = 'youtube', id, title, source, lang, duration, caption }) => {
+  const meta = [source, lang && `Audio en ${lang}`, duration].filter(Boolean).join(' · ');
+  return (
+    <figure className="video-embed">
+      <div className="video-embed-frame">
+        <iframe
+          src={videoSources[provider](id)}
+          title={title}
+          loading="lazy"
+          allow="encrypted-media; picture-in-picture; fullscreen"
+          allowFullScreen
+        />
+      </div>
+      <figcaption>
+        <strong className="video-embed-title">{title}</strong>
+        {meta && <span className="video-embed-meta">{meta}</span>}
+        {caption && <span dangerouslySetInnerHTML={{ __html: formatMarkdownInline(caption) }} />}
+        <a href={videoPages[provider](id)} target="_blank" rel="noopener noreferrer">Abrir en {provider === 'youtube' ? 'YouTube' : 'Adobe'} ↗</a>
+      </figcaption>
+    </figure>
+  );
+};
+
+const resourceIcons = { video: '▶️', image: '🖼️', diagram: '📐', doc: '📄', code: '💻' };
+
 export const ResourceLinks = ({ items = [] }) => (
   <section className="resource-links-card">
     <div className="git-timeline-header">
@@ -337,7 +394,7 @@ export const ResourceLinks = ({ items = [] }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="resource-link-icon">{item.type === 'video' ? '▶️' : '🖼️'}</span>
+          <span className="resource-link-icon">{resourceIcons[item.type] || '🖼️'}</span>
           <span className="resource-link-text">
             <span className="resource-link-title">{item.title}</span>
             <span className="resource-link-source">{item.source}</span>

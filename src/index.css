@@ -1405,3 +1405,77 @@ h1, h2, h3, h4, h5, h6 {
 .quiz-container {
   overflow-wrap: anywhere;
 }
+
+/* Figuras e imágenes de los temas */
+.lesson-figure {
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}
+.lesson-figure img,
+.lesson-figure-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+.lesson-figure-svg {
+  overflow-x: auto;
+}
+.lesson-figure figcaption,
+.video-embed figcaption {
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.75rem;
+}
+.lesson-figure-credit {
+  font-style: italic;
+}
+
+/* Videos embebidos (sin reproducción automática) */
+.video-embed {
+  margin: 1.75rem 0;
+}
+.video-embed-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+.video-embed-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-embed-title {
+  width: 100%;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.video-embed-meta {
+  color: var(--text-secondary);
+}
+.video-embed figcaption a {
+  color: var(--accent-cyan);
+}
+.lesson-figure-svg svg {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.lesson-figure-svg text {
+  font-family: var(--font-sans, inherit);
+}
+@media (max-width: 480px) {
+  .lesson-figure { padding: 0.75rem 0.5rem; }
+}
