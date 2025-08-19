@@ -42,7 +42,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 * **Tema 15** [Back · Básico] Flujo de Despliegue Local: Perfiles Maven, Sincronización en Caliente y Git Flow
 
 ### Módulo 3: Componentes, HTL y Diálogos Básicos · Básico
-* **Tema 16** [Front · Básico] Creación de Componentes AEM: Estructura JCR y Versionado *(en desarrollo)*
+* **Tema 16** [Front · Básico] Creación de Componentes AEM: Estructura JCR y Versionado
 * **Tema 17** [Front · Básico] Guía Completa de Directivas y Expresiones HTL *(en desarrollo)*
 * **Tema 18** [Front · Básico] Modularidad en HTL: Separación de Archivos y Plantillas *(en desarrollo)*
 * **Tema 19** [Front · Básico] Componentes Core: Uso y Habilitación mediante Código *(en desarrollo)*

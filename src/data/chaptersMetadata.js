@@ -245,15 +245,10 @@ export const allModules = [
         "title": "Creación de Componentes AEM: Estructura JCR y Versionado",
         "level": "Básico",
         "track": "front",
-        "summary": "Aprende a construir componentes de AEM desde cero detallando su anatomía en el JCR y las mejores prácticas de versionamiento.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Las Dos Formas de Crear Componentes en AEM",
-          "Caso 1: Componente Custom (error-message)",
-          "Caso 2: Componente Versionado (login/v1/login)",
-          "Tipos de Campos (Fields) Granite UI Comunes (Boilerplate de Diálogos)",
-          "Ocultar Campos Dinámicamente (Show/Hide Nativo de AEM)"
+        "summary": "Anatomía completa de un componente (cq:Component, cq:dialog, cq:editConfig, cq:template), el patrón versionado + proxy con un componente Aviso v1/v2 compilado y validado, el catálogo de Core Components 2.28.0 y cómo heredarlos y personalizarlos en cuatro niveles (estilos, diálogo, HTML y lógica).",
+        "prerequisites": [
+          "ch-6",
+          "ch-11"
         ]
       },
       {
@@ -340,6 +335,7 @@ export const allModules = [
           "textfield, textarea, numberfield, checkbox, select, pathfield, datepicker",
           "fileupload / imagen y el componente Image",
           "multifield compuesto y dónde se guardan los ítems",
+          "Mostrar/ocultar campos según otro campo (show/hide nativo)",
           "cq:design_dialog vs. políticas",
           "Ejercicio: diálogo completo de un componente Card"
         ]
