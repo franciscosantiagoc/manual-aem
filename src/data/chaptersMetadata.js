@@ -257,16 +257,9 @@ export const allModules = [
         "title": "Guía Completa de Directivas y Expresiones HTL",
         "level": "Básico",
         "track": "front",
-        "summary": "Domina la sintaxis y directivas del motor HTL (Sightly): variables implícitas, sly attributes, templates, resource merging, XSS escaping y performance.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Guía Completa de Directivas y Expresiones HTL (Sightly)",
-          "1. Variables Implícitas (Contexto Global)",
-          "2. Directivas de Lógica y Flujo (Sly Attributes)",
-          "3. Plantillas y Modularización de Código",
-          "4. Escapado Automático por Contexto (Context-Aware Escaping)",
-          "5. Recomendaciones de Rendimiento y Buenas Prácticas"
+        "summary": "Referencia completa de HTL 1.4 explicada desde cero: expresiones y operadores, reglas de verdadero/falso, objetos globales, las 12 directivas data-sly-* y su orden de evaluación, escapado por contexto contra XSS, format/i18n/join/URLs, y un componente Demo HTL compilado con los errores reales del validador.",
+        "prerequisites": [
+          "ch-16"
         ]
       },
       {

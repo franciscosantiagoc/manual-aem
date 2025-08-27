@@ -213,5 +213,215 @@ export default [
       1
     ],
     "explanation": "La validación indica archivo, línea y columna del error, y evita que un HTL roto llegue a AEM."
+  },
+  {
+    "id": "ch-17-q1",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Dónde se ejecuta HTL?",
+    "options": [
+      "En el navegador, como JavaScript.",
+      "En el servidor de AEM; el navegador recibe HTML puro.",
+      "En el Dispatcher.",
+      "En el CDN."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "HTL se compila y ejecuta en AEM; el navegador nunca ve expresiones ni atributos data-sly-*."
+  },
+  {
+    "id": "ch-17-q2",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Qué imprime ${properties.titulo || 'Sin título'} si la propiedad titulo no existe?",
+    "options": [
+      "null",
+      "false",
+      "Sin título",
+      "Un error de compilación"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "|| devuelve el primer valor verdadero; una propiedad inexistente es falsa."
+  },
+  {
+    "id": "ch-17-q3",
+    "chapterId": "ch-17",
+    "type": "multiple",
+    "question": "¿Cuáles de estos valores cuentan como falsos en HTL?",
+    "options": [
+      "0",
+      "'' (texto vacío)",
+      "[] (colección vacía)",
+      "'false' (texto)"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "El texto 'false' no está vacío, así que es verdadero."
+  },
+  {
+    "id": "ch-17-q4",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "La propiedad cantidad se guardó como el texto \"3\". ¿Qué devuelve ${properties.cantidad == 3}?",
+    "options": [
+      "true, HTL convierte los tipos.",
+      "false, la comparación es estricta y no convierte tipos.",
+      "Un error.",
+      "3"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "== funciona como === de JavaScript: texto contra número es falso."
+  },
+  {
+    "id": "ch-17-q5",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Qué diferencia hay entre data-sly-list y data-sly-repeat?",
+    "options": [
+      "Ninguna, son sinónimos.",
+      "list repite el contenido del elemento; repeat repite el elemento completo.",
+      "list solo recorre mapas y repeat solo arreglos.",
+      "repeat no ofrece la variable de estado itemList."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Con list el <ul> aparece una vez y se repiten los <li>; con repeat se repite la etiqueta donde está la directiva."
+  },
+  {
+    "id": "ch-17-q6",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "En un ciclo data-sly-list.hija, ¿qué contiene hijaList.count?",
+    "options": [
+      "El total de elementos.",
+      "La posición actual empezando en 1.",
+      "La posición actual empezando en 0.",
+      "El número de elementos restantes."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "index empieza en 0 y count en 1; first, last, middle, odd y even completan el estado."
+  },
+  {
+    "id": "ch-17-q7",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Qué contexto se debe usar para imprimir el HTML de un Rich Text Editor de forma segura?",
+    "options": [
+      "text",
+      "unsafe",
+      "html",
+      "uri"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "html conserva las etiquetas seguras y elimina scripts y atributos peligrosos; unsafe desactiva toda protección."
+  },
+  {
+    "id": "ch-17-q8",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Qué ocurre con <div style=\"color: ${properties.color}\"> sin opción context?",
+    "options": [
+      "Se imprime el color escapado como atributo.",
+      "La expresión se reemplaza por texto vacío y el validador del proyecto lo marca.",
+      "AEM lanza un error 500.",
+      "Se aplica el contexto styleToken automáticamente."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "En style, on* y dentro de script o style el contexto es obligatorio; sin él la expresión no imprime nada."
+  },
+  {
+    "id": "ch-17-q9",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Qué devuelve ${'/content/practica/us/en' @ extension='html'}?",
+    "options": [
+      "/content/practica/us/en",
+      "/content/practica/us/en.html",
+      "/content/practica/us/en/html",
+      "en.html"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "La opción extension agrega o cambia la extensión de una URL."
+  },
+  {
+    "id": "ch-17-q10",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "Cuando un elemento tiene data-sly-list y data-sly-test, ¿cuál se evalúa primero?",
+    "options": [
+      "data-sly-list",
+      "data-sly-test",
+      "El que esté escrito a la izquierda",
+      "Se evalúan a la vez"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "test (prioridad 2) va antes que list (prioridad 7); por eso la variable del ciclo no existe todavía en la prueba."
+  },
+  {
+    "id": "ch-17-q11",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Qué elementos acepta data-sly-element?",
+    "options": [
+      "Cualquier etiqueta, incluida script.",
+      "Solo etiquetas de una lista permitida (h1–h6, p, div, section...); script, style, form o input se rechazan.",
+      "Solo h1 a h6.",
+      "Solo div y span."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El contexto elementName valida el nombre contra una lista segura."
+  },
+  {
+    "id": "ch-17-q12",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Qué produce <p data-sly-unwrap>Hola</p>?",
+    "options": [
+      "<p>Hola</p>",
+      "Hola",
+      "Nada",
+      "<sly>Hola</sly>"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "unwrap quita la etiqueta y conserva el contenido; <sly> hace lo mismo siempre."
+  },
+  {
+    "id": "ch-17-q13",
+    "chapterId": "ch-17",
+    "type": "single",
+    "question": "¿Por qué falló ${'Creada el {0}' @ format=['dd/MM/yyyy' @ format=fecha]}?",
+    "options": [
+      "Porque format no admite fechas.",
+      "Porque las opciones @ no se pueden anidar dentro de otra expresión; se resuelve con data-sly-set.",
+      "Porque faltaba type='string'.",
+      "Porque {0} solo acepta números."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El validador respondió 'no viable alternative at input'; se formatea la fecha en una variable y luego se inserta."
   }
 ];
