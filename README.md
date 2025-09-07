@@ -44,7 +44,7 @@ Manual técnico e interactivo para aprender Adobe Experience Manager (AEM 6.5 y 
 ### Módulo 3: Componentes, HTL y Diálogos Básicos · Básico
 * **Tema 16** [Front · Básico] Creación de Componentes AEM: Estructura JCR y Versionado
 * **Tema 17** [Front · Básico] Guía Completa de Directivas y Expresiones HTL
-* **Tema 18** [Front · Básico] Modularidad en HTL: Separación de Archivos y Plantillas *(en desarrollo)*
+* **Tema 18** [Front · Básico] Modularidad en HTL: Separación de Archivos y Plantillas
 * **Tema 19** [Front · Básico] Componentes Core: Uso y Habilitación mediante Código *(en desarrollo)*
 * **Tema 20** [Front · Básico] Herencia de Componentes: sling:resourceType y sling:resourceSuperType *(en desarrollo)*
 * **Tema 21** [Front · Básico] Diálogos Touch UI Básicos: Campos Granite más Usados *(en desarrollo)*

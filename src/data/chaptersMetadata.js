@@ -268,15 +268,10 @@ export const allModules = [
         "title": "Modularidad en HTL: Separación de Archivos y Plantillas",
         "level": "Básico",
         "track": "front",
-        "summary": "Divide y vencerás. Aprende a modularizar los archivos HTML de tus componentes complejos mediante plantillas sightly e inclusiones locales.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "La Necesidad de Modularidad en HTL",
-          "Forma 1: Inclusión Básica (data-sly-include)",
-          "Forma 2: Plantillas Parametrizadas (data-sly-template y data-sly-call)",
-          "Forma 3: Inclusión de Recursos (data-sly-resource)",
-          "Recomendaciones y Buenas Prácticas"
+        "summary": "Divide y reutiliza el HTL de tus componentes: data-sly-include para separar archivos, plantillas con parámetros en bibliotecas compartidas (incluso recursivas) y data-sly-resource para anidar componentes y zonas editables; cómo modularizan los Core Components y un componente Promo validado con el build.",
+        "prerequisites": [
+          "ch-16",
+          "ch-17"
         ]
       },
       {

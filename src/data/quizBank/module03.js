@@ -423,5 +423,201 @@ export default [
       1
     ],
     "explanation": "El validador respondió 'no viable alternative at input'; se formatea la fecha en una variable y luego se inserta."
+  },
+  {
+    "id": "ch-18-q1",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "¿Qué hace data-sly-include?",
+    "options": [
+      "Renderiza otro recurso del JCR con su propio componente.",
+      "Ejecuta otro script sobre el mismo recurso y pone su salida en lugar del elemento.",
+      "Carga un Sling Model.",
+      "Declara una plantilla reutilizable."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "include organiza un componente en archivos; trabaja sobre el mismo recurso y la misma petición."
+  },
+  {
+    "id": "ch-18-q2",
+    "chapterId": "ch-18",
+    "type": "multiple",
+    "question": "En promo.html se crea una variable con data-sly-set y luego se incluye encabezado.html. ¿Qué puede usar encabezado.html?",
+    "options": [
+      "properties del Promo",
+      "currentPage",
+      "La variable creada con data-sly-set en promo.html",
+      "wcmmode"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "El parcial comparte los objetos globales porque trabaja sobre el mismo recurso, pero no ve las variables locales del script que lo incluye."
+  },
+  {
+    "id": "ch-18-q3",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "¿Qué ocurre con el elemento que lleva data-sly-call?",
+    "options": [
+      "Desaparece siempre.",
+      "Se conserva y su contenido se reemplaza por la salida de la plantilla.",
+      "Se duplica por cada parámetro.",
+      "Se convierte en <template>."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Con <li data-sly-call> obtienes el <li> con la plantilla dentro; con <sly> no queda ningún elemento alrededor."
+  },
+  {
+    "id": "ch-18-q4",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "¿Cómo se usan plantillas declaradas en otro archivo?",
+    "options": [
+      "Con data-sly-include del archivo.",
+      "Cargando el archivo con data-sly-use y llamando a variable.nombrePlantilla con data-sly-call.",
+      "Con data-sly-resource.",
+      "Copiándolas, no se pueden compartir."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Por ejemplo data-sly-use.tpl=\"practica/components/commons/templates.html\" y luego data-sly-call=\"${tpl.boton @ ...}\"."
+  },
+  {
+    "id": "ch-18-q5",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "Una plantilla declara ${@ texto, estilo='primario o secundario'} y se llama sin pasar estilo. ¿Cuánto vale estilo dentro?",
+    "options": [
+      "'primario o secundario'",
+      "'' (texto vacío)",
+      "null y la llamada falla",
+      "'primario'"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El texto tras = en la declaración es solo una pista para quien lee; un parámetro no pasado vale texto vacío. El valor por defecto se da con ||."
+  },
+  {
+    "id": "ch-18-q6",
+    "chapterId": "ch-18",
+    "type": "multiple",
+    "question": "¿Qué caracteriza a data-sly-resource?",
+    "options": [
+      "Hace una petición interna nueva para otro recurso.",
+      "El componente incluido usa sus propios scripts, modelo y diálogo.",
+      "Recibe parámetros como una plantilla.",
+      "Con un nodo hijo relativo, el autor puede editar la pieza por separado."
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "No recibe parámetros como una plantilla; acepta opciones como resourceType o selectores."
+  },
+  {
+    "id": "ch-18-q7",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "Con data-sly-resource=\"${'aviso' @ resourceType='practica/components/aviso'}\", ¿qué pasa si el nodo hijo aviso no existe?",
+    "options": [
+      "Se lanza un error 404.",
+      "Sling lo dibuja con el componente indicado y AEM crea el nodo cuando el autor guarda su diálogo.",
+      "No se muestra nada hasta crear el nodo a mano en CRXDE.",
+      "Se crea el nodo al publicar la página."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "resourceType indica con qué componente renderizar un recurso que todavía no existe; al editarlo, AEM crea el nodo."
+  },
+  {
+    "id": "ch-18-q8",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "¿Por qué el Teaser de Core Components carga title.html con una ruta relativa?",
+    "options": [
+      "Por rendimiento.",
+      "Para que un proxy pueda sobrescribir solo ese archivo y heredar el resto.",
+      "Porque las rutas absolutas no funcionan en HTL.",
+      "Para que el autor elija el título."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Las rutas relativas se buscan en el componente del recurso y su cadena de herencia, así que el proxy puede reemplazar una sola pieza."
+  },
+  {
+    "id": "ch-18-q9",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "Necesitas el mismo marcado de botón en diez componentes con textos distintos. ¿Qué usas?",
+    "options": [
+      "data-sly-include",
+      "Una plantilla en una biblioteca compartida",
+      "data-sly-resource",
+      "Copiar el HTML en cada componente"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Las plantillas con parámetros son la herramienta de reutilización de marcado; un cambio en la biblioteca se refleja en todos."
+  },
+  {
+    "id": "ch-18-q10",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "¿Por qué conviene evitar data-sly-resource dentro de ciclos largos?",
+    "options": [
+      "Porque no funciona dentro de data-sly-list.",
+      "Porque cada uso es una petición interna completa y el costo se multiplica.",
+      "Porque crea nodos en cada visita.",
+      "Porque desactiva la caché del Dispatcher."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Resolución, filtros, modelo y script se ejecutan por cada inclusión; si solo repites marcado, usa una plantilla."
+  },
+  {
+    "id": "ch-18-q11",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "El build falló con 'token recognition error at: +' en ${currentPage.depth + 2}. ¿Por qué?",
+    "options": [
+      "depth no existe en Page.",
+      "HTL no tiene operadores aritméticos.",
+      "Faltaba el contexto number.",
+      "Las plantillas no aceptan números."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "HTL no calcula; los cálculos van en un Sling Model o se reciben ya calculados."
+  },
+  {
+    "id": "ch-18-q12",
+    "chapterId": "ch-18",
+    "type": "single",
+    "question": "¿Qué permite una plantilla recursiva como arbol del laboratorio?",
+    "options": [
+      "Recorrer una estructura de profundidad variable, como el árbol de páginas.",
+      "Incluir otros componentes editables.",
+      "Cachear el componente.",
+      "Evitar el escapado XSS."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "La plantilla se llama a sí misma con cada página hija mientras no se alcance la profundidad máxima."
   }
 ];
