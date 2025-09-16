@@ -280,16 +280,9 @@ export const allModules = [
         "title": "Componentes Core: Uso y Habilitación mediante Código",
         "level": "Básico",
         "track": "front",
-        "summary": "Descubre los componentes base preconstruidos por Adobe y cómo habilitarlos y extenderlos correctamente desde el código.",
-        "prerequisites": [],
-        "status": "pending",
-        "outline": [
-          "Introducción a los Core Components",
-          "Habilitación en el Proyecto mediante Proxy Components",
-          "Ventajas de usar Componentes Proxy",
-          "Desventajas de usar Componentes Proxy",
-          "Catálogo de Componentes Core de AEM",
-          "Personalización del Diálogo (Sling Resource Merger)"
+        "summary": "Qué trae cada Core Component además del HTML, cómo llegan a Cloud Service y a 6.5, su recorrido proxy → HTL → Sling Model → política con salidas reales, y cómo habilitarlos desde el código: grupos permitidos, políticas en /conf y su mapeo en la plantilla, Data Layer y un laboratorio con Embed solo para YouTube y un segundo proxy del Button.",
+        "prerequisites": [
+          "ch-16"
         ]
       },
       {

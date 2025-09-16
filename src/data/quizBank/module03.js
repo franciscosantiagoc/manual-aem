@@ -619,5 +619,201 @@ export default [
       0
     ],
     "explanation": "La plantilla se llama a sí misma con cada página hija mientras no se alcance la profundidad máxima."
+  },
+  {
+    "id": "ch-19-q1",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "¿Dónde están los Core Components en AEM as a Cloud Service?",
+    "options": [
+      "En /apps/core/wcm/components, instalados por el proyecto.",
+      "En /libs/core/wcm/components, incluidos y actualizados por Adobe.",
+      "En /conf/core.",
+      "En el bundle core del proyecto."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "En Cloud vienen con el producto y se actualizan continuamente; en 6.5 los instala el proyecto bajo /apps."
+  },
+  {
+    "id": "ch-19-q2",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "En un proyecto 6.5, ¿qué decide la propiedad core.wcm.components.version del pom.xml?",
+    "options": [
+      "Nada, solo sirve para compilar.",
+      "Qué versión de Core Components se instala, porque sus paquetes van embebidos en all.",
+      "La versión de AEM.",
+      "La versión del arquetipo."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "En 6.5 los paquetes core.wcm.components.content, .core y .config se embeben en all; en Cloud la versión solo se usa para compilar."
+  },
+  {
+    "id": "ch-19-q3",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "¿Por qué los autores no ven directamente 'Button (v2)' de Adobe en el panel de componentes?",
+    "options": [
+      "Porque está en el grupo oculto .core-wcm.",
+      "Porque no tiene diálogo.",
+      "Porque solo funciona en 6.5.",
+      "Porque requiere licencia."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Los Core Components originales están en .core-wcm; los autores usan los proxies del proyecto."
+  },
+  {
+    "id": "ch-19-q4",
+    "chapterId": "ch-19",
+    "type": "multiple",
+    "question": "¿Qué tres cosas hacen falta para que un autor use un Core Component en una página?",
+    "options": [
+      "Un proxy en ui.apps con un grupo visible",
+      "Que la política del contenedor permita ese grupo o componente",
+      "Copiar el HTL del Core Component",
+      "Opcionalmente, una política propia mapeada en la plantilla"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "No hace falta copiar el HTL; el proxy hereda todo."
+  },
+  {
+    "id": "ch-19-q5",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "¿Qué es una política (content policy)?",
+    "options": [
+      "El permiso de un usuario sobre una página.",
+      "La configuración de un componente para una plantilla: opciones permitidas y valores por defecto.",
+      "Una regla del Dispatcher.",
+      "El diálogo de edición del autor."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "La define quien diseña la plantilla con el diálogo de diseño y aplica a todas las páginas de esa plantilla."
+  },
+  {
+    "id": "ch-19-q6",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "¿Cómo se asigna una política a un componente dentro de una plantilla?",
+    "options": [
+      "Con sling:resourceSuperType en el proxy.",
+      "Con un nodo de mapeo en templates/<plantilla>/policies cuya propiedad cq:policy apunta a la política.",
+      "Con componentGroup.",
+      "Con una configuración OSGi."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El mapeo replica la estructura de la plantilla y referencia la política, que vive en /conf/.../policies."
+  },
+  {
+    "id": "ch-19-q7",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "En el proyecto, el Title de la cabecera solo permite h1 y el del contenido h2–h6. ¿Cómo es posible con el mismo componente?",
+    "options": [
+      "Con dos versiones del Core Component.",
+      "Con dos políticas distintas mapeadas en distintas partes de la plantilla.",
+      "Con dos diálogos de edición.",
+      "No es posible."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Page Title (allowedTypes=h1) y Content Title (h2–h6) se mapean a distintos lugares de la estructura."
+  },
+  {
+    "id": "ch-19-q8",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "¿Qué ocurre si cambias en el XML de ui.content una política que ya existe en la instancia y el filtro usa mode=\"merge\"?",
+    "options": [
+      "Se actualiza.",
+      "No se modifica: merge solo agrega nodos nuevos.",
+      "Se borra.",
+      "El build falla."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Con merge el paquete no toca lo existente; sirve para crear políticas la primera vez sin pisar los cambios del Template Editor."
+  },
+  {
+    "id": "ch-19-q9",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "En el .model.json de un Title, ¿qué valor tiene :type?",
+    "options": [
+      "core/wcm/components/title/v3/title",
+      "El sling:resourceType del proxy del proyecto",
+      "cq:Component",
+      "h1"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "El JSON describe tu componente: en la Component Library, por ejemplo, es core-components-examples/components/title."
+  },
+  {
+    "id": "ch-19-q10",
+    "chapterId": "ch-19",
+    "type": "multiple",
+    "question": "¿Qué hace la política del Embed del laboratorio?",
+    "options": [
+      "Desactiva la URL libre (urlDisabled)",
+      "Desactiva el HTML libre (htmlDisabled)",
+      "Permite solo el embeddable de YouTube",
+      "Reproduce los videos automáticamente"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Limita el Embed a contenido de confianza; la reproducción automática no tiene relación con la política."
+  },
+  {
+    "id": "ch-19-q11",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "¿Qué es el Adobe Client Data Layer?",
+    "options": [
+      "Una base de datos del servidor.",
+      "Una capa de datos en el navegador (window.adobeDataLayer) donde los componentes publican su información y eventos para analítica.",
+      "El caché del Dispatcher.",
+      "Un índice de Oak."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Se activa con la configuración de contexto DataLayerConfig y cada componente agrega data-cmp-data-layer."
+  },
+  {
+    "id": "ch-19-q12",
+    "chapterId": "ch-19",
+    "type": "single",
+    "question": "¿Cuál es una desventaja real del patrón proxy?",
+    "options": [
+      "El contenido queda atado a los tipos de Adobe.",
+      "Hay una capa más de indirección y las actualizaciones de Adobe pueden cambiar el marcado, por lo que hay que probarlas.",
+      "No se pueden tener dos proxies del mismo Core Component.",
+      "No permite políticas."
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "Las ventajas son justamente lo contrario: el contenido apunta a tus tipos y puedes tener varios proxies."
   }
 ];
